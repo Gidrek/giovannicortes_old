@@ -18,9 +18,20 @@ email: me@giovannicortes.com
 description: > # this means to ignore newlines until "baseurl:"
   Linux, Python, DevOps y Open Source.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://giovannicortes.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: giovanni_cortes
 github_username:  gidrek
+youtube_channel:
+
+permalink: /:category/:title
+
+links:
+  - title: acerca
+    url: /acerca
+  - title: videos
+    url: /videos
+  - title: blog
+    url: /blog
 
 # Build settings
 markdown: kramdown

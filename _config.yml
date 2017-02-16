@@ -23,14 +23,6 @@ twitter_username: giovanni_cortes
 github_username:  gidrek
 youtube_channel:
 
-links:
-  - title: acerca
-    url: /acerca
-  - title: videos
-    url: /videos
-  - title: blog
-    url: /blog
-
 # Build settings
 markdown: kramdown
 gems:

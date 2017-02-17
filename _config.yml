@@ -14,6 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Giovanni Cortes
+site_autor: Giovanni Cortes
 email: me@giovannicortes.com
 description: > # this means to ignore newlines until "baseurl:"
   Linux, Python, DevOps y Open Source.

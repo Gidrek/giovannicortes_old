@@ -6,10 +6,32 @@ title: {{ this.title }}
 <div class="row">
 	<div class="col-xs-12 post-header">
 		<h2>{{ page.title }}</h2>
-		<p>{{ page.date  | date: "%d-%m-%Y" }}</p>
+		<div class="entry-meta">
+			<span class="posted-on">
+				<i class="fa fa-calendar"></i>
+				<p>{{ page.date  | date: "%d-%m-%Y" }}</p>
+			</span>
+			<span class="posted-on">
+				<i class="fa fa-user"></i>
+				<p>{{ site.site_autor }}</p>
+			</span>
+			<span class="posted-on">
+				<i class="fa fa-folder"></i>
+				<p>{{ page.categories[0] | capitalize }}</p>
+			</span>
+		</div>
 	</div>
 
 	<div class="col-xs-12 post-body">
+
+		{% if page.featured_image %}
+			<img src="{{ page.featured_image }}" alt="">
+		{% endif %}
+
+		{% if page.featured_video %}
+			
+		{% endif %}
+
 		{{ content }}
 	</div>
 </div>

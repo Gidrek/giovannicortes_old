@@ -1,3 +1,6 @@
+$font-stack: "Source Sans Pro", "Helvetica", Arial;
+
+
 $spacing-unit:  30px !default;
 
 /**
@@ -11,6 +14,10 @@ ul, ol, dl, figure,
 }
 
 // Custom Styles for bootstrap
+
+body {
+	font-family: $font-stack;
+}
 
 .navbar {
 	background: #373e42;
@@ -71,9 +78,49 @@ hr {
 }
 
 .excerpt {
-	font-size: 1.2em;
+	font-size: 1.5em;
 	line-height: 1.4em;
 	margin: 20px 0;
+}
+
+// Post content
+
+.post-header {
+	h2 {
+		font-size: 3em;
+		font-weight: 900px;
+		line-height: 1.1em;
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+}
+
+.entry-meta {
+	margin-top: -2em;
+	margin-bottom: 30px;
+
+	span {
+		margin-right: 10px;
+	}
+
+	.fa {
+		display: inline-block;
+		margin-right: 3px;
+	}
+
+	p {
+		display: inline-block;
+	}
+}
+
+.post-body {
+	img {
+		margin-bottom: 20px;
+		width: 100%;
+	}
+
+	font-size: 1.4em;
+
 }
 
 // Footer
@@ -84,13 +131,14 @@ footer {
 		color: #eee;
   }
 
-	background-color: #222;
-	color: #eee;
-	padding: 20px 0;
-
 	.fa-heart {
 		color: #ff0000;
 	}
+
+	background-color: #222;
+	color: #eee;
+	font-size: 1.1em;
+	padding: 20px 0;
 }
 
 footer a:hover {

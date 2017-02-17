@@ -23,8 +23,11 @@ twitter_username: giovanni_cortes
 github_username:  gidrek
 youtube_channel:
 
+permalink: /:categories/:title
+
 # Build settings
 markdown: kramdown
+markdown_ext: md
 gems:
   - jekyll-feed
 exclude:

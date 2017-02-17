@@ -38,6 +38,45 @@ ul, ol, dl, figure,
 	max-width: 900px;
 }
 
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+// Posts
+
+.post {
+	h2 {
+		font-size: 3em;
+		font-weight: 900;
+		text-align: center;
+
+		a {
+			color: #000;
+		}
+
+		a:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.featured-image {
+	height: 50%;
+	width: 100%;
+}
+
+.excerpt {
+	font-size: 1.2em;
+	line-height: 1.4em;
+	margin: 20px 0;
+}
+
+// Footer
 footer {
   
   a {

@@ -10,7 +10,7 @@ ul, ol, dl, figure,
   margin-bottom: $spacing-unit / 2;
 }
 
-// Custom Styles
+// Custom Styles for bootstrap
 
 .navbar {
 	background: #373e42;
@@ -31,6 +31,8 @@ ul, ol, dl, figure,
 .navbar-default .navbar-nav > li > a:focus {
     color: #d2d1d6;
 }
+
+// Custom styles
 
 .full-page-content {
 	max-width: 900px;

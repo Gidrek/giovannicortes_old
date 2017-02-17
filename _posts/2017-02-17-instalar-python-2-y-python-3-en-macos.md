@@ -4,6 +4,7 @@ title:  "Instalar Python 2 y Python 3 en macOS"
 date:   2017-02-17 08:46:55 -0600
 categories: python
 featured_image: "/images/python/python.png"
+featured_video:
 ---
 
 Una de las cosas que pasa cuando estas trabajando en macOS es que por 

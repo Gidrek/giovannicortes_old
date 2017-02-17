@@ -39,19 +39,25 @@ body {
     color: #d2d1d6;
 }
 
+.jumbotron {
+	background-color: #fff;
+	font-family: $font-stack;
+}
+
 // Custom styles
 
 .full-page-content {
 	max-width: 900px;
 }
 
-hr {
-	display: block;
-	height: 1px;
-	border: 0;
-	border-top: 1px solid #ccc;
-	margin: 1em 0;
-	padding: 0;
+.index-wrapper {
+
+	ul {
+		list-style: none;
+		margin-left: -2em;
+	}
+
+	font-size: 1.4em;
 }
 
 // Posts
@@ -81,6 +87,15 @@ hr {
 	font-size: 1.5em;
 	line-height: 1.4em;
 	margin: 20px 0;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
 }
 
 // Post content

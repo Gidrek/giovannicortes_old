@@ -37,3 +37,20 @@ ul, ol, dl, figure,
 .full-page-content {
 	max-width: 900px;
 }
+
+footer {
+  
+  a {
+  	background-color: #222;
+		color: #eee;
+  }
+
+	background-color: #222;
+	color: #eee;
+	padding: 20px 0;
+}
+
+footer a:hover {
+	color: #ddd;
+	text-decoration: none;
+}

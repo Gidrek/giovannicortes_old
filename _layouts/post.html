@@ -1,0 +1,11 @@
+---
+layout: default
+title: {{ this.title }}
+---
+
+<div class="post-title">
+	<h2>{{ page.title }}</h2>
+	<p>{{ page.date  | date: "%d-%m-%Y" }}</p>
+</div>
+
+{{ content }}

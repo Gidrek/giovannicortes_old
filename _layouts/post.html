@@ -25,7 +25,7 @@ title: {{ this.title }}
 	<div class="col-xs-12 post-body">
 
 		{% if page.featured_image %}
-			<img src="{{ page.featured_image }}" alt="">
+			<img src="{{ page.featured_image | prepend: site.url }}" alt="">
 		{% endif %}
 
 		{% if page.featured_video %}
@@ -36,4 +36,6 @@ title: {{ this.title }}
 	</div>
 </div>
 
-{% include disqus_comments.html %}
+{% if jekyll.environment == "production" %}
+   {% include disqus_comments.html %}
+{% endif %}

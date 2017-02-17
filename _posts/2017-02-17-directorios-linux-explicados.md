@@ -18,7 +18,7 @@ precisión en qué directorios instalar sus utilidades.
 En este artículo vamos a ver cuáles son los directorios y qué contiene 
 para que puedas encontrar los archivos que necesites de una forma más rápida.
 
-![Linux FileSystem](/assets/img/linux/linux-filesystem.png)
+![Linux FileSystem]({{ site.url }}/assets/img/linux/linux-filesystem.png)
 
 ## / – Root
 

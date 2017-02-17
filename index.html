@@ -12,42 +12,50 @@ title: Inicio
     </p>
 </div>
 
-<div class="col-md-12">
-    <h2>Ve algunos videos para introducirte a DevOps</h2>
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Ve algunos videos para introducirte a DevOps</h2>
+    </div>
 </div>
 
-<div class="col-md-4 video-box">
-    <article>
-        <h3>
-            <a href="">Linux Tips</a>
-        </h3>
-    </article>
+<div class="row">
+    <div class="col-xs-4 video-box">
+        <article>
+            <h3>
+                <a href="">Linux Tips</a>
+            </h3>
+        </article>
+    </div>
+
+    <div class="col-xs-4 video-box">
+        <article>
+            <h3>
+                <a href="">Vagrant</a>
+            </h3>
+        </article>
+    </div>
+
+    <div class="col-xs-4 video-box">
+        <article>
+            <h3>
+                <a href="">Python</a>
+            </h3>
+        </article>
+    </div>
 </div>
 
-<div class="col-md-4 video-box">
-    <article>
-        <h3>
-            <a href="">Vagrant</a>
-        </h3>
-    </article>
-</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Últimos artículos</h2>
 
-<div class="col-md-4 video-box">
-    <article>
-        <h3>
-            <a href="">Python</a>
-        </h3>
-    </article>
-</div>
-
-<div class="col-md-12">
-    <h2>Últimos artículos</h2>
-
-    <section class="site-section">
-        <ul class="post-list">
-        {% for post in site.posts limit:5 %}
-            <li class="post"><a href="{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
-        </ul>
-    </section>
+        <section class="site-section">
+            <ul class="post-list">
+            {% for post in site.posts limit:5 %}
+                {% if post.categories[0] != "video" %}
+                <li class="post"><a href="{{ post.url }}">{{ post.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </section>
+    </div>
 </div>

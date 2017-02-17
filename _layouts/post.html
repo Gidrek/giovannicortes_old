@@ -3,9 +3,13 @@ layout: default
 title: {{ this.title }}
 ---
 
-<div class="post-title">
-	<h2>{{ page.title }}</h2>
-	<p>{{ page.date  | date: "%d-%m-%Y" }}</p>
-</div>
+<div class="row">
+	<div class="col-xs-12 post-header">
+		<h2>{{ page.title }}</h2>
+		<p>{{ page.date  | date: "%d-%m-%Y" }}</p>
+	</div>
 
-{{ content }}
+	<div class="col-xs-12 post-body">
+		{{ content }}
+	</div>
+</div>

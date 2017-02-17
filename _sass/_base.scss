@@ -1,0 +1,37 @@
+$spacing-unit:  30px !default;
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+  margin-bottom: $spacing-unit / 2;
+}
+
+// Custom Styles
+
+.navbar {
+	background: #373e42;
+}
+
+.navbar-default .navbar-brand {
+    color: #e2e1e6;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #d2d1d6;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #e2e1e6;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #d2d1d6;
+}
+
+.full-page-content {
+	max-width: 900px;
+}

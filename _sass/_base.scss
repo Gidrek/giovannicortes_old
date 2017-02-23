@@ -50,11 +50,40 @@ body {
 	max-width: 900px;
 }
 
+input[type="submit"], button {
+	display: block;
+	margin: 0 auto;
+	padding: 15px 1em;
+	flex-grow: 1;
+	box-shadow: none;
+	color: #fff;
+	background-color: #e85c41;
+	border: none;
+	border-radius: 3px;
+}
+
+input[type="email"] {
+	padding: 10px;
+	border: solid 5px #c9c9c9;
+	transition: border 0.3s;
+	width: 50%;
+	flex-grow: 1;
+	box-shadow: none;
+}
+
+// Index
 .index-wrapper {
 
 	ul {
 		list-style: none;
 		margin-left: -2em;
+	}
+
+	.email-cta-box {
+		border: 1px #222 dotted;
+		padding: 1em;
+		padding-bottom: 1.5em;
+		margin-bottom: 1em;
 	}
 
 	font-size: 1.4em;

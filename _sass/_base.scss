@@ -65,12 +65,27 @@ body {
 .page-content {
 
 	.img-responsive {
-		border-radius: 100%;
-		max-width: 30%;
 		margin: 0 auto;
 	}
 
+	.author {
+		border-radius: 100%;
+		max-width: 30%;
+	}
+
+	.featured {
+		max-width: 70%;
+		margin: 20px auto;
+	}
+
+	h1 {
+		text-align: center;
+		font-weight: bold;
+		font-size: 2em;
+	}
+
 	font-size: 1.4em;
+	padding: 10px;
 }
 
 // Posts

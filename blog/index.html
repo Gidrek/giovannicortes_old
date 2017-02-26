@@ -1,0 +1,49 @@
+---
+layout: default
+title: Artículos
+---
+
+<div class="row">
+  <div class="col-xs-12">
+  {% for post in paginator.posts %}
+        {% if post.categories[0] != "video" %}
+        <article class="post">
+           <header>
+              <h2>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+              </h2>
+              {% if post.featured_image %}
+                <a href="{{ post.url }}">
+              <img src="{{ post.featured_image }}" alt="" class="featured-image">
+                </a>
+              {% endif %}
+              
+              {% if post.featured_video %}
+                  
+              {% endif %}
+            </header>
+              <div class="excerpt">  
+              {{ post.excerpt }}
+              </div>
+        </article>
+        <hr>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+      <!-- Pagination links -->
+  <div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">Anterior</a>
+  {% else %}
+    <span class="previous">Anterior</span>
+  {% endif %}
+  <span class="page_number ">Página: {{ paginator.page }} de {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Siguiente</a>
+  {% else %}
+    <span class="next ">Siguiente</span>
+  {% endif %}
+  </div>
+
+</div>

@@ -24,6 +24,9 @@ twitter_username: giovanni_cortes
 github_username:  gidrek
 youtube_channel:
 
+paginate: 5
+paginate_path: "/blog/page:num/"
+
 permalink: /:categories/:title/
 
 # Build settings
@@ -31,6 +34,7 @@ markdown: kramdown
 markdown_ext: md
 gems:
   - jekyll-feed
+  - jekyll-paginate
 exclude:
   - Gemfile
   - Gemfile.lock

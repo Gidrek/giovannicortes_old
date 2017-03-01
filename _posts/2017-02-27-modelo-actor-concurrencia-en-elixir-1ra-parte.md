@@ -34,27 +34,27 @@ y obtengas tu API Key para usarlo.
 Vamos a crear un nuevo proyecto
 
 {% highlight bash %}
-$ mix new wheater_elixir
+$ mix new weather_elixir
 * creating README.md
 * creating .gitignore
 * creating mix.exs
 * creating config
 * creating config/config.exs
 * creating lib
-* creating lib/wheater_elixir.ex
+* creating lib/weather_elixir.ex
 * creating test
 * creating test/test_helper.exs
-* creating test/wheater_elixir_test.exs
+* creating test/weather_elixir_test.exs
 
 Your Mix project was created successfully.
 You can use "mix" to compile it, test it, and more:
 
-    cd wheater_elixir
+    cd weather_elixir
     mix test
 
 Run "mix help" for more commands.
 
-$ cd wheater_elixir
+$ cd weather_elixir
 {% endhighlight %}
 
 Ahora en nuestro proyecto abrimos el archivo `mix.exs` para ingresar algunas
@@ -95,7 +95,7 @@ nuestro código y nos da una base para ir contruyendo lo demás.
 Crea un archivo `lib/worker.ex`
 
 {% highlight elixir %}
-defmodule WheaterElixir.Worker do
+defmodule WeatherElixir.Worker do
 
   def temperature_of(location) do
     result = url_for(location) |> HTTPoison.get |> parse_response
@@ -128,7 +128,7 @@ defmodule WheaterElixir.Worker do
   end
 
   defp compute_temperature(json) do
-    # Tratamos de obtener la temperatura, la información que necesitamos de openwheatermap
+    # Tratamos de obtener la temperatura, la información que necesitamos de openweathermap
     # está dentro de main y temp. Le restamos 273.15 porque nos lo da en Kelvin,
     # y hacemos que solo nos muestre un decimal. Mandamos la tupla con :ok y la
     # temperatura, en caso contrario mandamos un :error
@@ -161,11 +161,11 @@ iex –S mix
 Y ahora a meter algunas ciudades
 
 {% highlight bash %}
-iex(1)> WheaterElixir.Worker.temperature_of "Mexico City"
+iex(1)> WeatherElixir.Worker.temperature_of "Mexico City"
 "Mexico City: 11.5°C"
-iex(2)> WheaterElixir.Worker.temperature_of "Bogota"
+iex(2)> WeatherElixir.Worker.temperature_of "Bogota"
 "Bogota: 12.0°C"
-iex(3)> WheaterElixir.Worker.temperature_of "Omega Plus 7"
+iex(3)> WeatherElixir.Worker.temperature_of "Omega Plus 7"
 "Omega Plus 7 not found"
 {% endhighlight %}
 
@@ -175,7 +175,7 @@ Y si creamos una lista de ciudades
  iex(1)> cities = ["Mexico City", "Bogota", "Monaco", "Lima"]
 ["Mexico City", "Bogota", "Monaco", "Lima"]
 iex(2)> cities |> Enum.map(fn city ->
-...(2)>   WheaterElixir.Worker.temperature_of city
+...(2)>   WeatherElixir.Worker.temperature_of city
 ...(2)> end)
 ["Mexico City: 11.5°C", "Bogota: 12.0°C", "Monaco: 12.8°C", "Lima: 21.6°C"]
 {% endhighlight %}

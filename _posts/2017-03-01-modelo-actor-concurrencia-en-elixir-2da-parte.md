@@ -18,13 +18,13 @@ Vimos que nuestra aplicación presenta un problema, ya que aunque funciona bien,
 concurrente y tenemos que esperar a que una acción termine para que empieze la otra. Checando
 nuestro programa, nos podemos dar cuenta que el pedir la temperatura de una ciudad es
 independiente de pedir la temperatura en otra ciudad, entonces es una muy buena forma
-de empezar a empacar la función de `WheaterElixir.Worker.temperature_of` en un proceso.
+de empezar a empacar la función de `WeatherElixir.Worker.temperature_of` en un proceso.
 
 Primero vamos a agregar una función loop a nuestro worker que se encargará de
 crear los procesos para cada ciudad
 
 {% highlight elixir %}
-defmodule WheaterElixir.Worker do
+defmodule WeatherElixir.Worker do
 
   def loop do
     receive do
@@ -44,7 +44,7 @@ Vamos a explicar un poco los procesos para ir entendiendo que vamos haciendo.
 Corre de nuevo `iex -S mix` para que probemos la nueva función.
 
 {% highlight bash %}
-iex(1)> pid = spawn(WheaterElixir.Worker, :loop, [])
+iex(1)> pid = spawn(WeatherElixir.Worker, :loop, [])
 #PID<0.190.0>
 {% endhighlight %}
 
@@ -139,7 +139,7 @@ Es tiempo de crear la lista de ciudades
 iex(1)> cities = ["Mexico City", "Bogota", "Monaco", "Lima"]
 ["Mexico City", "Bogota", "Monaco", "Lima"]
 iex(2)> cities |> Enum.each(fn city ->
-...(2)>   pid = spawn(WheaterElixir.Worker, :loop, [])
+...(2)>   pid = spawn(WeatherElixir.Worker, :loop, [])
 ...(2)>   send(pid, {self(), city})
 ...(2)> end)
 :ok

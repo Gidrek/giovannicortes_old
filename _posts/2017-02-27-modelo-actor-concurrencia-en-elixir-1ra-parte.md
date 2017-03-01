@@ -184,4 +184,4 @@ Funciona muy bien, pero hay un problema, el programa no es concurrente, para obt
 la temperatura de una ciudad espera a que termine la otra ciudad para continuar, y no
 estamos sacando provecho de Elixir. 
 
-En la segunda parte vamos a empezar a ver los procesos de Elixir y ver cómo nos puede ayudar a tener un programa concurrente.
+En la [segunda parte](/elixir/modelo-actor-concurrencia-en-elixir-2da-parte/) vamos a empezar a ver los procesos de Elixir y ver cómo nos puede ayudar a tener un programa concurrente.

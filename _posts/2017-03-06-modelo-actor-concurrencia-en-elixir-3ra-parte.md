@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Modelo Actor Concurrencia en Elixir - 3ra Parte"
-date:   2017-03-01 08:11:34 -0600
+date:   2017-03-06 08:11:34 -0600
 categories: elixir
 featured_image: "/assets/img/elixir/elixir-logo.jpg"
 featured_video:

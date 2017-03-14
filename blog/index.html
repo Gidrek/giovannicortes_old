@@ -31,19 +31,15 @@ title: Artículos
     {% endfor %}
   </div>
 
-      <!-- Pagination links -->
-  <div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">Anterior</a>
-  {% else %}
-    <span class="previous">Anterior</span>
-  {% endif %}
-  <span class="page_number ">Página: {{ paginator.page }} de {{ paginator.total_pages }}</span>
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Siguiente</a>
-  {% else %}
-    <span class="next ">Siguiente</span>
-  {% endif %}
-  </div>
+  <nav aria-label="...">
+    <ul class="pager">
+      {% if paginator.previous_page %}
+      <li class="previous"><a href="{{ paginator.previous_page_path }}" class="previous">&larr; Anterior</a></li>
+      {% endif %}
+      {% if paginator.next_page %}
+      <li class="next"><a href="{{ paginator.next_page_path }}" class="next">&rarr; Siguiente</a></li>
+      {% endif %}
+    </ul>
+  </nav>
 
 </div>

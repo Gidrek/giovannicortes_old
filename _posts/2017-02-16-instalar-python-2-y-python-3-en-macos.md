@@ -3,7 +3,7 @@ layout: post
 title:  "Instalar Python 2 y Python 3 en macOS"
 date:   2017-02-16 08:46:55 -0600
 categories: python
-featured_image: "/assets/img/python/python-logo.jpg"
+featured_image: "/assets/img/python/python_post_01.jpg"
 featured_video:
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title:  "Autenticación API con Phoenix y Guardian"
 date:   2017-03-08 09:31:34 -0600
 categories: elixir
-featured_image: "/assets/img/elixir/phoenix.png"
+featured_image: "/assets/img/elixir/phoenix_post_01.jpg"
 featured_video:
 ---
 

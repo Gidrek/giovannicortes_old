@@ -3,7 +3,7 @@ layout: post
 title:  "Ambientes virtuales en Python, ¿qué son y cómo los instalo?"
 date:   2017-03-13 18:15:32 -0600
 categories: python
-featured_image: "/assets/img/python/python-logo.jpg"
+featured_image: "/assets/img/python/python_post_02.jpg"
 featured_video:
 ---
 

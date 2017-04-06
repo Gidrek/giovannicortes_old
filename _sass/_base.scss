@@ -208,6 +208,16 @@ hr {
 
 	font-size: 1.4em;
 
+	.image-post {
+		display: inline-block;
+		margin: 0 auto;
+		width: 50%;
+	}
+
+}
+
+.center-image {
+	text-align: center;
 }
 
 #disqus_thread {

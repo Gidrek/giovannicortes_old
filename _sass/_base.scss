@@ -1,5 +1,5 @@
 $font-stack: "Source Sans Pro", "Helvetica", Arial;
-
+$body-font-color: #000;
 
 $spacing-unit:  30px !default;
 
@@ -141,7 +141,7 @@ input[type="email"] {
 		text-align: center;
 
 		a {
-			color: #000;
+			color: $body-font-color;
 		}
 
 		a:hover {
@@ -197,6 +197,15 @@ hr {
 
 	p {
 		display: inline-block;
+	}
+
+	a {
+		color: $body-font-color;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: $body-font-color;
 	}
 }
 

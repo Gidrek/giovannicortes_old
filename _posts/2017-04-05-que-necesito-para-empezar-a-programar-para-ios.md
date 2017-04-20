@@ -3,7 +3,7 @@ layout: post
 title:  "¿Qué necesito para empezar a programar para iOS?"
 date:   2017-04-05 20:25:15 -0600
 description: Empieza a crear tus apps para iOS. En este post te recomiendo qué necesitas para empezar tus primeros pasos.
-categories: ios
+categories: swift
 featured_image: "/assets/img/swift/swift_post_01.jpg"
 featured_video:
 ---

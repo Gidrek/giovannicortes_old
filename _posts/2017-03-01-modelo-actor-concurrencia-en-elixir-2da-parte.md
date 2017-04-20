@@ -2,6 +2,7 @@
 layout: post
 title:  "Modelo Actor Concurrencia en Elixir - 2da Parte"
 date:   2017-03-01 08:11:34 -0600
+description: Segunda parte del tutorial de Elixir y su modelo de actor concurrencia.
 categories: elixir
 featured_image: "/assets/img/elixir/elixir_post_02.jpg"
 featured_video:

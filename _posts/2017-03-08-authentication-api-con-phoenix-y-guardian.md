@@ -2,6 +2,7 @@
 layout: post
 title:  "Autenticación API con Phoenix y Guardian"
 date:   2017-03-08 09:31:34 -0600
+description: Usa Phoenix para crear una API y poder autenticar a tus usuarios.
 categories: elixir
 featured_image: "/assets/img/elixir/phoenix_post_01.jpg"
 featured_video:

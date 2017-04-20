@@ -2,6 +2,7 @@
 layout: post
 title:  "Entrar a un contenedor Docker con bash"
 date:   2017-01-06 13:44:24 -0600
+description: Ingresa a un contenedor Docker y utilízalo como una VM Linux.
 categories: devops
 featured_image: "/assets/img/devops/docker.png"
 featured_video:

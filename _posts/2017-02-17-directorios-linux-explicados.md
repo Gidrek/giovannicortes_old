@@ -2,6 +2,7 @@
 layout: post
 title:  "Directorios Linux explicados"
 date:   2017-02-17 12:27:34 -0600
+description: Conoce para qué sirven los directorios de Linux y cómo puedes sacarles provecho.
 categories: linux
 featured_image: "/assets/img/linux/linux-folders.jpg"
 featured_video:

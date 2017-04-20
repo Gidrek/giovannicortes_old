@@ -2,6 +2,7 @@
 layout: post
 title:  "Ambientes virtuales en Python, ¿qué son y cómo los instalo?"
 date:   2017-03-13 18:15:32 -0600
+description: Aprende a utilizar los ambientes virtuales y usa varios paquetes Python sin conflicto.
 categories: python
 featured_image: "/assets/img/python/python_post_02.jpg"
 featured_video:

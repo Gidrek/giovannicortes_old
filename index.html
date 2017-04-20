@@ -19,19 +19,16 @@ title: Tutoriales, Programación, Tips
     </div>
 
     <div class="row">
-        <div class="col-xs-12">
-            <h2>Últimos artículos de mi blog</h2>
-
-            <section class="site-section">
-                <ul class="post-list">
-                {% for post in site.posts limit:5 %}
-                    {% if post.categories[0] != "video" %}
-                    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-                    {% endif %}
-                {% endfor %}
-                </ul>
-            </section>
-        </div>
+        <h2>Últimos artículos del blog</h2>
+        {% for post in site.posts limit:6 %}
+            {% if post.categories[0] != "video" %}
+            <div class="col-md-4 index-image-post">
+                <a href="{{ post.url }}">
+                    <img src="{{ post.featured_image }}" alt="{{ post.title }}" class="img-thumbnail">
+                </a>
+            </div>
+            {% endif %}
+        {% endfor %}
     </div>
 
     <div class="email-cta-box">

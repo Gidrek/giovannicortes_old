@@ -42,6 +42,7 @@ body {
 .jumbotron {
 	background-color: #fff;
 	font-family: $font-stack;
+	margin-bottom: -40px;
 }
 
 // Custom styles
@@ -87,6 +88,10 @@ input[type="email"] {
 	}
 
 	font-size: 1.4em;
+}
+
+.index-image-post {
+	margin-bottom: 15px;
 }
 
 // Pages

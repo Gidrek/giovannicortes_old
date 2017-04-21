@@ -64,12 +64,12 @@ input[type="submit"], button {
 }
 
 input[type="email"] {
-	padding: 10px;
 	border: solid 5px #c9c9c9;
+	box-shadow: none;
+	flex-grow: 1;
+	padding: 10px;
 	transition: border 0.3s;
 	width: 50%;
-	flex-grow: 1;
-	box-shadow: none;
 }
 
 // Index
@@ -82,9 +82,9 @@ input[type="email"] {
 
 	.email-cta-box {
 		border: 1px #222 dotted;
-		padding: 1em;
-		padding-bottom: 1.5em;
 		margin-bottom: 1em;
+		padding-bottom: 1.5em;
+		padding: 1em;
 	}
 
 	font-size: 1.4em;
@@ -108,14 +108,14 @@ input[type="email"] {
 	}
 
 	.featured {
-		max-width: 70%;
 		margin: 20px auto;
+		max-width: 70%;
 	}
 
 	h1 {
-		text-align: center;
-		font-weight: bold;
 		font-size: 2em;
+		font-weight: bold;
+		text-align: center;
 	}
 
 	font-size: 1.4em;
@@ -167,10 +167,10 @@ input[type="email"] {
 }
 
 hr {
+	border-top: 1px solid #ccc;
+	border: 0;
 	display: block;
 	height: 1px;
-	border: 0;
-	border-top: 1px solid #ccc;
 	margin: 1em 0;
 	padding: 0;
 }
@@ -182,14 +182,14 @@ hr {
 		font-size: 3em;
 		font-weight: 900px;
 		line-height: 1.1em;
-		margin-top: 1em;
 		margin-bottom: 1em;
+		margin-top: 1em;
 	}
 }
 
 .entry-meta {
-	margin-top: -2em;
 	margin-bottom: 30px;
+	margin-top: -2em;
 
 	span {
 		margin-right: 10px;

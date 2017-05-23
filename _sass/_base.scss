@@ -90,6 +90,20 @@ input[type="email"] {
 	font-size: 1.4em;
 }
 
+.suscribe-wrapper {
+	ul {
+		list-style: none;
+		margin-left: -2em;
+	}
+
+	.email-cta-box {
+		border: 1px #222 dotted;
+		margin-bottom: 1em;
+		padding-bottom: 1.5em;
+		padding: 1em;
+	}
+}
+
 .index-image-post {
 	margin-bottom: 15px;
 }

@@ -17,7 +17,7 @@ title: Giovanni Cortes
 site_autor: Giovanni Cortes
 email: me@giovannicortes.com
 description: > # this means to ignore newlines until "baseurl:"
-  Aprende Elixir, iOS, Elixir, Phoenix. Lleva tus desarrollos al siguiente nivel.
+  Aprende Elixir, iOS, Python, Phoenix. Lleva tus desarrollos al siguiente nivel.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://giovannicortes.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: giovanni_cortes

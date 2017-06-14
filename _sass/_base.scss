@@ -1,4 +1,5 @@
-$font-stack: "Source Sans Pro", "Helvetica", Arial;
+$font-stack: 'Libre Franklin', sans-serif;
+$font-secondary-stack:  'PT Sans Caption', sans-serif;
 $body-font-color: #000;
 
 $spacing-unit:  30px !default;
@@ -48,7 +49,7 @@ body {
 // Custom styles
 
 .full-page-content {
-	max-width: 900px;
+	max-width: 1250px;
 }
 
 input[type="submit"], button {
@@ -175,18 +176,28 @@ input[type="email"] {
 }
 
 .excerpt {
-	font-size: 1.5em;
+	font-size: 1.2em;
 	line-height: 1.4em;
 	margin: 20px 0;
 }
 
 hr {
 	border-top: 1px solid #ccc;
-	border: 0;
 	display: block;
 	height: 1px;
 	margin: 1em 0;
 	padding: 0;
+}
+
+.well {
+
+	padding: 15px;
+
+	h4 {
+		font-family: $font-secondary-stack;
+		font-weight: 700;
+		font-size: 2.2rem;
+	}
 }
 
 // Post content
@@ -203,7 +214,6 @@ hr {
 
 .entry-meta {
 	margin-bottom: 30px;
-	margin-top: -2em;
 
 	span {
 		margin-right: 10px;
@@ -226,6 +236,10 @@ hr {
 	a:hover {
 		color: $body-font-color;
 	}
+}
+
+.entry-meta-post {
+	margin-top: -2em;
 }
 
 .post-body {
@@ -274,4 +288,14 @@ footer {
 footer a:hover {
 	color: #ddd;
 	text-decoration: none;
+}
+
+// Google button fix
+input.gsc-input,
+.gsc-input-box,
+.gsc-input-box-hover,
+.gsc-input-box-focus,
+.gsc-search-button {
+    box-sizing: content-box; 
+    line-height: normal;
 }

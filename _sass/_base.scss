@@ -24,6 +24,10 @@ body {
 	background: #373e42;
 }
 
+.navbar-brand {
+	font-size: 1.7em;
+}
+
 .navbar-default .navbar-brand {
     color: #e2e1e6;
 }
@@ -49,7 +53,7 @@ body {
 // Custom styles
 
 .full-page-content {
-	max-width: 1250px;
+	max-width: 900px;
 }
 
 input[type="submit"], button {

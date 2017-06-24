@@ -2,77 +2,40 @@
 layout: default
 title: Mi rincón de desarrollo
 ---
-<div class="row">
-    <div class="col-md-8">
-        {% for post in paginator.posts %}
+<div class="index-wrapper">
+    
+    <div class="jumbotron">
+        <h1>Aprende Swift, Elixir y programación</h1>
+
+        <p>Hola, mi nombre es Giovanni Cortés, y me gusta <strong>hacer videos y escribir sobre
+            Swift, Elixir y en general de software libre</strong>. He sido desarrollador
+            por 5 años y me gusta <strong>ayudar a las personas a aprender sobre tecnología</strong>.
+        </p>
+        <p>
+            En mi blog escribo tips y tutoriales para aquellos que quieran <strong>aprender sobre Desarrollo de Software, en especial iOS y también Elixir</strong>; 
+            algunos artículos son para principiantes, pero también escribo cosas más avanzadas 
+            por si quieres hacer algo en particular. Si tienes algún tema o quieres 
+            contarme algo, no dudes en contactarme.
+        </p>
+    </div>
+
+    <div class="row">
+        <h2>Últimos artículos del blog</h2>
+        {% for post in site.posts limit:6 %}
             {% if post.categories[0] != "video" %}
-            <article class="post">
-                <header>
-                    <h2>
-                        <a href="{{ post.url }}">{{ post.title }}</a>
-                    </h2>
-
-                    <div class="entry-meta">
-                        <span class="posted-on">
-                            <i class="fa fa-calendar"></i>
-                            <p>{{ post.date  | date: "%d-%m-%Y" }}</p>
-                        </span>
-                        <span class="posted-on">
-                            <i class="fa fa-user"></i>
-                            <p>{{ site.site_autor }}</p>
-                        </span>
-                        <span class="posted-on">
-                            <i class="fa fa-folder"></i>
-                            <p><a href="/{{ post.categories[0] }}/">{{ post.categories[0] | capitalize }}</a></p>
-                        </span>
-                    </div>
-                {% if post.featured_image %}
-                    <a href="{{ post.url }}">
-                        <img src="{{ post.featured_image }}" alt="" class="featured-image">
-                    </a>
-                {% endif %}
-              
-                {% if post.featured_video %}
-                  
-                {% endif %}
-                </header>
-              
-                <div class="excerpt">  
-                {{ post.excerpt }}
-                </div>
-
-                <a href="{{ post.url }}" class="btn btn-primary">
-                    Leer más 
-                    <span class="glyphicon glyphicon-chevron-right"></span>
+            <div class="col-md-4 index-image-post">
+                <a href="{{ post.url }}">
+                    <img src="{{ post.featured_image }}" alt="{{ post.title }}" class="img-thumbnail">
                 </a>
-            </article>
-            <hr>
+            </div>
             {% endif %}
         {% endfor %}
+    </div>
 
-        <nav aria-label="...">
-            <ul class="pager">
-                {% if paginator.previous_page %}
-                <li class="previous"><a href="{{ paginator.previous_page_path }}" class="previous">&larr; Anterior</a></li>
-                {% endif %}
-                {% if paginator.next_page %}
-                <li class="next"><a href="{{ paginator.next_page_path }}" class="next">&rarr; Siguiente</a></li>
-                {% endif %}
-            </ul>
-        </nav>
-            
-    </div>
-        
-    <div class="col-md-4">
-        {% include sidebar.html %}
-    </div>
-</div>
-    
-<div class="index-wrapper">
     <div class="email-cta-box">
-        <h2>Tips de programación</h3>
+        <h3>Tips de programación</h3>
         <div class="email-cta-info">
-            Obtén cada semana un poco de información sobre Desarrollo y Tips de Swift, Elixir, Python y programación en General. Prometo no enviar spam. Puedes cancelar tu suscripción en
+            Obtén cada semana un poco de información sobre Desarrollo y Tips de DevOps, Linux y programación en General. Prometo no enviar spam. Puedes cancelar tu suscripción en
             cualquier momento.
         </div>
         {% include subscribe_general.html %}

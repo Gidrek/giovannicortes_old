@@ -5,6 +5,10 @@ title: ¿Qué cubriremos? - Iniciando con Linux
 
 # ¿Qué cubriremos?
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/IhOqb32sDFE"></iframe>
+</div>
+
 Estos son algunos temas que vamos a ver en este inicio para empezar a
 manejar servidores Linux. Con esto básico podemos empezar a crear nuestros
 laboratorios para practicar.

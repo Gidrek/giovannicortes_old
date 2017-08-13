@@ -3,6 +3,8 @@ layout: default
 title: ¿Qué cubriremos? - Iniciando con Linux
 ---
 
+# ¿Qué cubriremos?
+
 Estos son algunos temas que vamos a ver en este inicio para empezar a
 manejar servidores Linux. Con esto básico podemos empezar a crear nuestros
 laboratorios para practicar.

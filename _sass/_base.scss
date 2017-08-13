@@ -54,6 +54,7 @@ body {
 
 .full-page-content {
 	max-width: 900px;
+	font-size: 1.2em;
 }
 
 input[type="submit"], button {
@@ -77,6 +78,14 @@ input[type="email"] {
 	width: 50%;
 }
 
+.tleft {
+	text-align: left;
+}
+
+.tright {
+	text-align: right;
+}
+
 // Index
 .index-wrapper {
 
@@ -90,9 +99,10 @@ input[type="email"] {
 		margin-bottom: 1em;
 		padding-bottom: 1.5em;
 		padding: 1em;
+		font-size: 0.7em;
 	}
 
-	font-size: 1.4em;
+	font-size: 1.2em;
 }
 
 .popular-topic {
@@ -155,7 +165,7 @@ input[type="email"] {
 		text-align: center;
 	}
 
-	font-size: 1.4em;
+	font-size: 1.2em;
 	padding: 10px;
 }
 
@@ -270,7 +280,7 @@ hr {
 		width: 100%;
 	}
 
-	font-size: 1.4em;
+	font-size: 1.2em;
 
 	.image-post {
 		display: inline-block;
@@ -287,6 +297,66 @@ hr {
 #disqus_thread {
 	margin-bottom: 2em;
 	margin-top: 2em;
+}
+
+// Paginator courses
+.floater-wrap {
+	bottom: 0;
+	border: 1px solid #D8D8D8;
+	display: flex;
+	margin-top: 25px;
+	position: relative;
+	width: 100%;
+}
+
+.toc {
+	border: 1px solid #D8D8D8;
+
+	a {
+		display: block;
+		padding: 30px;
+	}
+}
+
+.prev-next {
+	flex: 1;
+}
+
+.next-previous
+.half.half-left {
+	float: left;
+}
+
+.next-previous
+.half {
+	width: 50%;
+
+	.half-wrap {
+		border: 1px solid #D8D8D8;
+		padding: 12px;
+	}
+
+	.half-label {
+		color: #99A4AF;
+		font-size: 14px;
+		font-weight: 800px;
+	}
+
+	.current-lesson {
+		font-size: 20px;
+		font-weight: 500;
+	}
+
+	.half-link {
+		font-size: 20px;
+		font-weight: 500;
+		text-decoration: none;
+	}
+}
+
+.next-previous
+.half.half-right {
+	float: right;
 }
 
 // Footer

@@ -25,6 +25,7 @@ laboratorios para practicar.
 * Permisos
 * Nginx básico
 
+<!-- Paginator-->
 <div class="next-previous clearfix">
   <div class="floater-wrap">
     <div class="toc">
@@ -52,3 +53,7 @@ laboratorios para practicar.
     </div>
   </div>
 </div>
+
+{% if jekyll.environment == 'production' %}
+  {% include disqus_comments.html %}
+{% endif %}

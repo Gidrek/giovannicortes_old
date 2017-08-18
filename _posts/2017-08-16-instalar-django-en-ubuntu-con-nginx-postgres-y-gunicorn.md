@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Instalar Django con Ubuntu, Ngnix, Postgres y Gunicorn"
-date:   2017-08-11 22:33:00 -0600
+date:   2017-08-16 22:33:00 -0600
 description: Instala tu aplicación Django en Ubuntu utiizando Postgres, gunicorn y Nginx, listo para producción.
 categories: python
 featured_image: "/assets/img/python/django_post_01.jpg"

@@ -8,7 +8,8 @@ permalink: /acerca/
 
 <h2>Sobre mí</h2>
 
-<p>Mi nombre es Giovanni Cortes y ayudo a los que quieran aprender sobre Swift y Elixir.</p>
+<p>Mi nombre es Giovanni Cortes y vivo en la Ciudad de México. Me gusta todo lo relacionado con Linux, Python, DevOps, Mac y general
+sobre IT.</p>
 
 <p>
   He sido desarrollador por más de 5 años escribiendo en lenguajes como
@@ -17,7 +18,7 @@ permalink: /acerca/
 </p>
 
 <p>
-  Actualmente soy Chief DevOps Engineer en <a href="http://civica.digital" target="_blank">Civica Digital</a>. Aunque también hago trabajos como consultor de iOS y DevOps.
+  Actualmente DevOps Engineer en <a href="http://datiobd.com" target="_blank">Datio</a>. Aunque también hago trabajos como consultor de iOS y DevOps.
 </p>
 
 <p>
@@ -29,7 +30,16 @@ permalink: /acerca/
 
 <h2>Sobre el blog</h2>
 
-<p>El blog está hecho con un tema personal pero heredado de Bootstrap 3. Igualmente uso Jekyll para generar mis entradas.</p>
+<p>
+ He creado este blog para ir escribiendo sobre lo que voy aprendiendo de Linux y de DevOps. Una de las cosas que más me gusta es enseñar y creo que
+ enseñar es una de las mejores formas de aprender.
+</p>
+
+<p>
+  Espero que les guste el blog y que les pueda servir de ayuda, tanto a ustedes como a mí.
+</p>
+
+<p>Ahora, poníendonos un poco más técnicos, el blog está hecho con un tema personal pero heredado de Bootstrap 3. Igualmente uso Jekyll para generar mis entradas.</p>
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br>
 Todo el contenido gratis está licenciado bajo <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
@@ -42,3 +52,7 @@ Todo el contenido gratis está licenciado bajo <a rel="license" href="http://cre
   data-size="large">
 Follow @giovanni_cortes</a>
 </p>
+
+{% if jekyll.environment == 'production' %}
+  {% include disqus_comments.html %}
+{% endif %}

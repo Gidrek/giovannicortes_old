@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Desplegar un servidor NFS en Centos 7"
-date:   2017-08-18 09:48:00 -0600
+date:   2017-08-18 08:48:00 -0600
 description: Desplegar un servidor NFS en Centos 7 y configurarlo para los clientes.
 categories: linux
 featured_image: "/assets/img/linux/linux_post_01.jpg"

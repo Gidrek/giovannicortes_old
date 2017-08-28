@@ -1,6 +1,8 @@
 ---
 layout: default
 title: ¿Qué cubriremos? - Iniciando con Linux
+description: Un pequeño temario sobre lo que cubriremos en este curso
+permalink: /empieza-linux/que-cubriremos/
 ---
 
 # ¿Qué cubriremos?
@@ -44,8 +46,8 @@ laboratorios para practicar.
         <div class="half-wrap">
           <p class="half-label">SIGUIENTE</p>
           <p>
-            <a href="" class="half-link">
-              Familias de Linux
+            <a href="/empieza-linux/familias-linux/" class="half-link">
+              Familias de servidores Linux
             </a>
           </p>
         </div>

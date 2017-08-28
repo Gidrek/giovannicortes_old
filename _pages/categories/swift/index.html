@@ -1,13 +1,14 @@
 ---
 layout: page
 permalink: /swift/
+description: Categoría Swift
 title: Swift
 ---
 
 <section class="archive-post-list">
     <h1>Swift</h1>
     <ul>
-    {% for post in site.categories.swift %}   
+    {% for post in site.categories.swift %}
             <li><a href="{{ post.url }}"><span>{{ post.date | date: "%d-%m-%Y" }}</span> - {{ post.title }}</a></li>
     {% endfor %}
     </ul>

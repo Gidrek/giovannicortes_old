@@ -1,13 +1,14 @@
 ---
 layout: page
 permalink: /linux/
+description: Categoría Linux
 title: Linux
 ---
 
 <section class="archive-post-list">
     <h1>Linux</h1>
     <ul>
-    {% for post in site.categories.linux %}   
+    {% for post in site.categories.linux %}
             <li><a href="{{ post.url }}"><span>{{ post.date | date: "%d-%m-%Y" }}</span> - {{ post.title }}</a></li>
     {% endfor %}
     </ul>

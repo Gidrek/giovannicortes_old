@@ -1,13 +1,14 @@
 ---
 layout: page
 permalink: /elixir/
+description: Categoría Elixir
 title: Elixir
 ---
 
 <section class="archive-post-list">
     <h1>Elixir</h1>
     <ul>
-    {% for post in site.categories.elixir %}   
+    {% for post in site.categories.elixir %}
             <li><a href="{{ post.url }}"><span>{{ post.date | date: "%d-%m-%Y" }}</span> - {{ post.title }}</a></li>
     {% endfor %}
     </ul>

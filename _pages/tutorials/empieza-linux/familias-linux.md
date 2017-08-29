@@ -33,8 +33,8 @@ Mira la presentación aquí
         <div class="half-wrap">
           <p class="half-label">SIGUIENTE</p>
           <p>
-            <a href="" class="half-link">
-              &
+            <a href="/empieza-linux/nuestro-laboratorio/" class="half-link">
+              Creando nuestro laboratorio
             </a>
           </p>
         </div>

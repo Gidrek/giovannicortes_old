@@ -93,7 +93,7 @@ apt-get upgrade
         <div class="half-wrap">
           <p class="half-label">SIGUIENTE</p>
           <p>
-            <a href="" class="half-link">
+            <a href="/empieza-linux/conociendo-la-shell/" class="half-link">
               Conociendo la Shell
             </a>
           </p>

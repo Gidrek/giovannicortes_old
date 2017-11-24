@@ -48,6 +48,11 @@ body {
 	background-color: #fff;
 	font-family: $font-stack;
 	margin-bottom: -40px;
+	text-align: center;
+
+	p {
+		text-align: center;
+	}
 }
 
 // Custom styles
@@ -68,7 +73,7 @@ input[type="submit"], button {
 	padding: 15px 1em;
 }
 
-input[type="email"] {
+input[type="email"].suscribe {
 	border: solid 5px #c9c9c9;
 	box-shadow: none;
 	flex-grow: 1;
@@ -98,7 +103,6 @@ input[type="email"] {
 		margin-bottom: 1em;
 		padding-bottom: 1.5em;
 		padding: 1em;
-		font-size: 0.7em;
 	}
 
 	font-size: 1.2em;
@@ -356,6 +360,13 @@ hr {
 .next-previous
 .half.half-right {
 	float: right;
+}
+
+// Contact
+
+.contact-form {
+	max-width: 60%;
+	margin: 0 auto;
 }
 
 // Footer

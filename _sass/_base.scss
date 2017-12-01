@@ -48,6 +48,7 @@ body {
 	background-color: #fff;
 	font-family: $font-stack;
 	margin-bottom: -40px;
+	text-align: center;
 }
 
 // Custom styles
@@ -138,6 +139,10 @@ input[type="email"] {
 
 .index-image-post {
 	margin-bottom: 15px;
+}
+
+.email-cta-info {
+	font-size: 1.3em;
 }
 
 // Pages

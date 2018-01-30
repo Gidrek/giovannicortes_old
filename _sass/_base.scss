@@ -1,6 +1,7 @@
 $font-stack: 'Libre Franklin', sans-serif;
 $font-secondary-stack:  'PT Sans Caption', sans-serif;
 $body-font-color: #000;
+$background-color-navs: #373e42;
 
 $spacing-unit:  30px !default;
 
@@ -21,7 +22,7 @@ body {
 }
 
 .navbar {
-	background: #373e42;
+	background: $background-color-navs;
 }
 
 .navbar-brand {
@@ -42,13 +43,6 @@ body {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
     color: #d2d1d6;
-}
-
-.jumbotron {
-	background-color: #fff;
-	font-family: $font-stack;
-	margin-bottom: -40px;
-	text-align: center;
 }
 
 // Custom styles
@@ -87,6 +81,24 @@ input[type="email"] {
 }
 
 // Index
+.title-background {
+	background: url(../img/top_banner_bg.png) top center no-repeat;
+	background-color: $background-color-navs;
+	color: #ffffff;
+	padding-top: 40px;
+}
+
+.jumbotron {
+	font-family: $font-stack;
+	margin-bottom: 0;
+
+	p {
+		margin-bottom: 15px;
+		font-size: 21px;
+		font-weight: 200;
+	}
+}
+
 .index-wrapper {
 
 	ul {
@@ -394,4 +406,13 @@ input.gsc-input,
 .gsc-search-button {
     box-sizing: content-box;
     line-height: normal;
+}
+
+@media (max-width: 992px) {
+	.title-background {
+		background: none;
+		background-color: $background-color-navs;
+		color: #ffffff;
+		padding-top: 40px;
+	}
 }

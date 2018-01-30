@@ -3,7 +3,22 @@ layout: default
 title: Aprendiendo Elixir y Swift
 ---
 <div class="index-wrapper">
-    
+
+    <div class="row">
+        <h2>Cursos</h2>
+        <div class="col-md-4 tutorial-outline">
+            <a href="/introduccion-a-elixir/">
+                <img src="/assets/img/elixir_curso/elixir_curso_logo.jpg" alt="Tutorial Elixir">
+                <h2>Introducción a Elixir</h2>
+                <p>
+                    Una introducción a Elixir. En este curso vas a
+                    aprender los conceptos básicos de este lenguaje y conocerás
+                    cómo hacer aplicaciones concurrentes y tolerante a fallos.
+                </p>
+            </a>
+        </div>
+    </div>
+
     <div class="row">
         <h2>Últimos artículos del blog</h2>
         {% for post in site.posts limit:6 %}

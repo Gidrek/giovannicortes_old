@@ -2,6 +2,7 @@ $font-stack: 'Libre Franklin', sans-serif;
 $font-secondary-stack:  'PT Sans Caption', sans-serif;
 $body-font-color: #000;
 $background-color-navs: #373e42;
+$border-outline: 2px solid #e85c41;
 
 $spacing-unit:  30px !default;
 
@@ -109,7 +110,7 @@ input[type="email"] {
 	margin-bottom: 25px;
 
 	h2 {
-		border-bottom: 2px solid #e85c41;
+		border-bottom: $border-outline;
 		line-height: 33px;
 	}
 
@@ -187,6 +188,63 @@ input[type="email"] {
 
 .email-cta-info {
 	font-size: 1.3em;
+}
+
+.about-background {
+	background-color: #f3dd75;
+	padding-top: 25px;
+	padding-bottom: 63px;
+
+	img {
+		border-radius: 50%;
+		width: 256px;
+		height: 256px;
+	}
+
+	h2.aboutauthor {
+		margin-top: 35px;
+		margin-bottom: 18px;
+		border-bottom: $border-outline;
+		line-height: 33px;
+	}
+}
+
+.using-background {
+	padding-top: 25px;
+	padding-bottom: 63px;
+
+	img {
+		border-radius: 50%;
+		width: 256px;
+		height: 256px;
+	}
+
+	h2.aboutauthor {
+		margin-top: 35px;
+		margin-bottom: 18px;
+		border-bottom: $border-outline;
+		line-height: 33px;
+	}
+}
+
+.disclaimer-background {
+	background-color: $background-color-navs;
+	color: #efefef;
+	padding-top: 25px;
+	padding-bottom: 63px;
+
+	img {
+		border-radius: 50%;
+		width: 256px;
+		height: 256px;
+	}
+
+	h2.aboutauthor {
+		margin-top: 35px;
+		margin-bottom: 18px;
+		border-bottom: $border-outline;
+		line-height: 33px;
+	}
 }
 
 // Pages

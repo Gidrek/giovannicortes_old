@@ -4,3 +4,5 @@ _site
 .vscode/
 giovannicortes.*
 .DS_Store
+vendor/
+.bundle/

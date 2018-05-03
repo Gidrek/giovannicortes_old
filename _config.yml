@@ -40,5 +40,6 @@ exclude:
   - Gemfile.lock
   - giovannicortes.sublime-workspace
   - giovannicortes.sublime-project
+  - vendor
 include:
   - _pages

@@ -6,6 +6,7 @@ description: Swift es un gran lenguaje, y unas de las cosas que me gusta de Swif
 categories: swift
 featured_image: "/assets/img/swift/swift_post_02.jpg"
 featured_video:
+excerpt: Swift es un gran lenguaje, y unas de las cosas que me gusta de Swift es que puedes  programar funcionalmente aún si el lenguaje no es 100% funcional. 
 ---
 
 Swift es un gran lenguaje, y unas de las cosas que me gusta de Swift es que **puedes 

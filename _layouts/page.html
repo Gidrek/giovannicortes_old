@@ -3,8 +3,10 @@ layout: default
 title: {{ this.title }}
 ---
 
-<div class="row">
-  <div class="col-xm-12 page-content">
+<section class="page-container">
+  <h3 class="post-title">{{ page.title }}</h3>
+
+  <article>
     {{ content }}
-  </div>
-</div>
+  </article>
+</section>

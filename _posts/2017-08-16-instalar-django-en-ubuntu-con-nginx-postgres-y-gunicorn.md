@@ -6,6 +6,7 @@ description: Instala tu aplicación Django en Ubuntu utiizando Postgres, gunicor
 categories: python
 featured_image: "/assets/img/python/django_post_01.jpg"
 featured_video:
+excerpt: Instala tu aplicación Django en Ubuntu utiizando Postgres, gunicorn y Nginx, listo para producción.
 ---
 
 # 1. Introducción

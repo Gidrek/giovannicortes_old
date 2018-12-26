@@ -2,80 +2,47 @@
 layout: default
 title: Blog
 ---
+
+
+<div class="jumbotron">
+    <p class="lead"></p>
+</div>
+
+
+<h4>Todas las entradas</h4>
+
 <div class="row">
-    <div class="col-md-8">
-        {% for post in paginator.posts %}
-            {% if post.categories[0] != "video" %}
-            <article class="post">
-                <header>
-                    <h2>
-                        <a href="{{ post.url }}">{{ post.title }}</a>
-                    </h2>
-
-                    <div class="entry-meta">
-                        <span class="posted-on">
-                            <i class="fa fa-calendar"></i>
-                            <p>{{ post.date  | date: "%d-%m-%Y" }}</p>
-                        </span>
-                        <span class="posted-on">
-                            <i class="fa fa-user"></i>
-                            <p>{{ site.site_autor }}</p>
-                        </span>
-                        <span class="posted-on">
-                            <i class="fa fa-folder"></i>
-                            <p><a href="/{{ post.categories[0] }}/">{{ post.categories[0] | capitalize }}</a></p>
-                        </span>
-                    </div>
-                {% if post.featured_image %}
-                    <a href="{{ post.url }}">
-                        <img src="{{ post.featured_image }}" alt="" class="featured-image">
-                    </a>
-                {% endif %}
-              
-                {% if post.featured_video %}
-                  
-                {% endif %}
-                </header>
-              
-                <div class="excerpt">  
-                {{ post.excerpt }}
+    {% for post in paginator.posts %}
+    <div class="col-md-12 col-lg-6">
+        <div class="card" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <meta itemprop="name" content="Programa Conmigo">
+                <meta itemprop="url" content="https://programaconmigo.com">
+                <div itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+                    <meta itemprop="url" content="https://programaconmigo.com/assets/img/logo_pc.jpg">
+                    <meta itemprop="height" content="500">
+                    <meta itemprop="width" content="500">
                 </div>
-
-                <a href="{{ post.url }}" class="btn btn-primary">
-                    Leer más 
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-            </article>
-            <hr>
-            {% endif %}
-        {% endfor %}
-
-        <nav aria-label="...">
-            <ul class="pager">
-                {% if paginator.previous_page %}
-                <li class="previous"><a href="{{ paginator.previous_page_path }}" class="previous">&larr; Anterior</a></li>
-                {% endif %}
-                {% if paginator.next_page %}
-                <li class="next"><a href="{{ paginator.next_page_path }}" class="next">&rarr; Siguiente</a></li>
-                {% endif %}
-            </ul>
-        </nav>
-            
-    </div>
-        
-    <div class="col-md-4">
-        {% include sidebar.html %}
-    </div>
-</div>
-    
-<div class="index-wrapper">
-    <div class="email-cta-box">
-        <h2>Tips de programación</h3>
-        <div class="email-cta-info">
-            Obtén cada semana un poco de información y Tips de desarrollo de iOS y macOS y otros temas de programación. 
-            Prometo no enviar spam. Puedes cancelar tu suscripción en cualquier momento.
+            </div>
+            <a href="{{ post.url }}">
+                <img src="{{ post.featured_image }}" alt="{{ post.title }}">
+            </a>
+            <div class="content">
+                <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                <p>{{ post.excerpt }}</p>
+            </div>
         </div>
-        {% include subscribe_general.html %}
     </div>
+    {% endfor %}
 </div>
 
+<nav aria-label="..." class="paginator">
+    <ul class="pager">
+        {% if paginator.previous_page %}
+        <li class="previous"><a href="{{ paginator.previous_page_path }}" class="previous">&larr; Anterior</a></li>
+        {% endif %}
+        {% if paginator.next_page %}
+        <li class="next"><a href="{{ paginator.next_page_path }}" class="next">&rarr; Siguiente</a></li>
+        {% endif %}
+    </ul>
+</nav>

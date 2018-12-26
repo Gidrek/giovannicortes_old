@@ -3,42 +3,98 @@ layout: default
 title: {{ this.title }}
 ---
 
-<div class="row">
-	<div class="col-md-12 post-header">
-		<h2>{{ page.title }}</h2>
-		<div class="entry-meta entry-meta-post">
-			<span class="posted-on">
-				<i class="fa fa-calendar"></i>
-				<p>{{ page.date  | date: "%d-%m-%Y" }}</p>
-			</span>
-			<span class="posted-on">
-				<i class="fa fa-user"></i>
-				<p>{{ site.site_autor }}</p>
-			</span>
-			<span class="posted-on">
-				<i class="fa fa-folder"></i>
-				<p><a href="/{{ page.categories[0] }}/">{{ page.categories[0] | capitalize }}</a></p>
-			</span>
-		</div>
-	</div>
+<section class="page-container">
+  <h5 class="post-category">
+    {{ page.categories[0] }}
+  </h5>
+  <hr class="dashed">
 
-	<div class="col-md-12 post-body">
+  <h3 class="post-title">
+    {{ page.title }}
+  </h3>
 
-		{% if page.featured_image %}
-			<img src="{{ page.featured_image | prepend: site.url }}" alt="">
-		{% endif %}
+  <ul class="post-meta">
+    <li>
+      <i class="fa fa-calendar"></i>
+      <time itemprop="datePublished" content="{{ page.date  | date: "%d-%m-%Y" }}">
+        {{ page.date | date: "%d-%m-%Y" }}</time>
+      <time itemprop="dateModified" content="{{ page.date  | date: "%d-%m-%Y" }}"></time>
+    </li>
+    <li>
+      <i class="fa fa-user"></i>
+      <a href="/acerca/" rel="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">
+          Giovanni Cortés</span>
+      </a>
+    </li>
+    <li>
+      <i class="fa fa-comments"></i>
+      <a href="#disqus_thread" data-disqus-identifier="{{ page.url | prepend: site.url }}"> Comentarios</a>
+    </li>
+  </ul>
 
-		{% if page.featured_video %}
-			
-		{% endif %}
+  <div class="post-featured-image">
+    <img src="{{ page.featured_image | prepend: site.url }}" alt="" class="featured-image">
+  </div>
 
-		{{ content }}
-	</div>
-</div>
+  <article>
+    {{ content }}
+  </article>
 
-{% if jekyll.environment == 'production' %}
-	{% include disqus_comments.html %}
-{% endif %}
+  <hr class="dashed">
 
+  <div class="row">
+    <div class="col-md-12 post-share">
+      <div class="social">
 
-<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58ae45c0d8749ad7"></script> 
+        Comparte:
+
+        <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ page.url | prepend: site.url }}" rel="nofollow"
+          target="_blank" title="Comparte en Twitter">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?app_id=1844900928896311&u={{ page.url | prepend: site.url }}"
+          rel="nofollow" target="_blank" title="Comparte en Facebook">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="http://www.linkedin.com/shareArticle?mini=true&url={{ page.url | prepend: site.url }}&title={{ page.title }}&source=https://programaconmigo.com"
+          rel="nofollow" target="_blank" title="Comparte en LinkedIn">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="https://plus.google.com/share?url={{ page.url | prepend: site.url }}" rel="nofollow" target="_blank"
+          title="Comparte en Google+">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="comments">
+    {% if jekyll.environment == 'production' %}
+    {% include disqus_comments.html %}
+    {% endif %}
+  </div>
+
+  <div class="suscribe">
+    <form action="https://giovannicortes.us9.list-manage.com/subscribe/post?u=10c4cc6399eaaa6198547def6&amp;id=3ec15876d2"
+      method="POST" novalidate>
+      <h4>
+        <span class="fa fa-send" style="margin-right: 5px"></span>
+        ¡Suscríbete a la lista de correos!
+      </h4>
+
+      <h5>
+        Suscríbete y obtén 10 tips para enseñarte a tí mismo cómo programar
+      </h5>
+
+      <div class="row">
+        <div class="col-md-8">
+          <input class="u-full-width" placeholder="Tu correo electrónico" type="email" name="EMAIL">
+        </div>
+        <div class="col-md-4">
+          <button type="submit" class="u-full-width">Suscribirse</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

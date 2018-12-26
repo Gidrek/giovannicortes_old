@@ -1,0 +1,15 @@
+---
+layout: page
+permalink: /devops/
+description: Categoría DevOps
+title: DevOps
+---
+
+<section class="archive-post-list">
+    <h1>DevOps</h1>
+    <ul>
+    {% for post in site.categories.devops %}
+            <li><a href="{{ post.url }}"><span>{{ post.date | date: "%d-%m-%Y" }}</span> - {{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+</section>

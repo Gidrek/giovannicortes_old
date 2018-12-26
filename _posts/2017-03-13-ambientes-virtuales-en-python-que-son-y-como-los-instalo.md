@@ -6,6 +6,7 @@ description: Aprende a utilizar los ambientes virtuales y usa varios paquetes Py
 categories: python
 featured_image: "/assets/img/python/python_post_02.jpg"
 featured_video:
+excerpt: En esta entrada aprenderemos a instalar ambientes virtuales para poder programar con distintas versiones de bibliotecas de Python y también diferentes versiones de Python.
 ---
 
 

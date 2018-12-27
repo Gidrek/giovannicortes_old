@@ -23,7 +23,7 @@ expreso consentimiento, o te daremos la oportunidad de negarte.
 ¿Cómo puedo anular mi consentimiento?
 
 Si luego de haber aceptado cambias de opinión, puedes anular tu consentimiento para que te contactemos, por la 
-recolección, uso o divulgación de tu información, en cualquier momento, contactándonos a giovanni@programaconmigo.com.
+recolección, uso o divulgación de tu información, en cualquier momento, contactándonos a giovanni@giovannicortes.com.
 
 #### SECCIÓN 3 – DIVULGACIÓN
 
@@ -92,4 +92,4 @@ PREGUNTAS E INFORMACIÓN DE CONTACTO
 
 Si quieres: acceder, corregir, enmendar o borrar cualquier información personal que poseamos sobre ti, registrar 
 una queja, o simplemente quieres más información contacta a nuestro Oficial de Cumplimiento de Privacidad 
-giovanni@programaconmigo.com
+giovanni@giovannicortes.com

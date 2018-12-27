@@ -10,7 +10,7 @@ permalink: /terminos/
 INFORMACIÓN GENERAL
 
 Este sitio web es operado por Giovanni Cortés. En todo el sitio, los términos “nosotros”, “nos” y “nuestro” se 
-refieren al sitio web de Programa Conmigo. Programa Conmigo ofrece este sitio web, incluyendo toda la información, herramientas y 
+refieren al sitio web de Giovanni Cortes. Giovanni Cortés ofrece este sitio web, incluyendo toda la información, herramientas y 
 servicios disponibles para ti en este sitio, el usuario, está condicionado a la aceptación de todos los términos, 
 condiciones, políticas y notificaciones aquí establecidos.
 
@@ -33,7 +33,7 @@ publicación de actualizaciones y/o cambios en nuestro sitio web. Es tu responsa
 periódicamente para verificar cambios. Tu uso continuo o el acceso al sitio web después de la publicación de 
 cualquier cambio constituye la aceptación de dichos cambios.
 
-#### SECCIÓN 1 – TÉRMINOS DE PROGRAMA CONMIGO
+#### SECCIÓN 1 – TÉRMINOS DE GIOVANNI CORTÉS
 
 Al utilizar este sitio, declaras que tienes al menos la mayoría de edad en tu estado o provincia de residencia y 
 que nos has dado tu consentimiento para permitir que cualquiera de tus dependientes menores use este sitio.
@@ -173,7 +173,7 @@ representación, garantías o condiciones de ningún tipo, ya sea expresa o impl
 o condiciones implícitas de comercialización, calidad comercializable, la aptitud para un propósito particular, 
 durabilidad, título y no infracción.
 
-En ningún caso Programa Conmigo, nuestros directores, funcionarios, empleados, afiliados, agentes, contratistas, internos, 
+En ningún caso Giovanni Cortés, nuestros directores, funcionarios, empleados, afiliados, agentes, contratistas, internos, 
 proveedores, prestadores de servicios o licenciantes serán responsables por cualquier daño, pérdida, reclamo, o 
 daños directos, indirectos, incidentales, punitivos, especiales o consecuentes de cualquier tipo, incluyendo, sin 
 limitación, pérdida de beneficios, pérdida de igresos, pérdida de ahorros, pérdida de datos, costos de reemplazo, 
@@ -189,7 +189,7 @@ responsabilidad se limitará en la medida máxima permitida por la ley.
 
 #### SECCIÓN 12 – INDEMNIZACIÓN
 
-Aceptas indemnizar, defender y mantener indemne Programa Conmigo y nuestras matrices, subsidiarias, afiliados, socios, 
+Aceptas indemnizar, defender y mantener indemne Giovanni Cortés y nuestras matrices, subsidiarias, afiliados, socios, 
 funcionarios, directores, agentes, contratistas, concesionarios, proveedores de servicios, subcontratistas, 
 proveedores, internos y empleados, de cualquier reclamo o demanda, incluyendo honorarios razonables de abogados, 
 hechos por cualquier tercero a causa o como resultado de tu incumplimiento de las Condiciones de Servicio o de 

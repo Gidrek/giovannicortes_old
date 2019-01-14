@@ -21,4 +21,4 @@ PASO 4: Haz clic en el botón dentro del mensaje para descargar la información 
 
 ¡Nos vemos!
 
-(¿No ves el email? Checa tu bandeja de SPAM. Si no lo encuentras, envíame un correo a giovanni@giovannicortes.com)
+(¿No ves el email? Checa tu bandeja de SPAM. Si no lo encuentras, envíame un correo a giovannicortes.dev@gmail.com)

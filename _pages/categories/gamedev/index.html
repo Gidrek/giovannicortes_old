@@ -1,0 +1,15 @@
+---
+layout: page
+permalink: /gamedev/
+description: Categoría Game Development
+title: GameDev
+---
+
+<section class="archive-post-list">
+    <h1>GameDev</h1>
+    <ul>
+    {% for post in site.categories.gamedev %}
+            <li><a href="{{ post.url }}"><span>{{ post.date | date: "%d-%m-%Y" }}</span> - {{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+</section>

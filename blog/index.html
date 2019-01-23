@@ -5,44 +5,50 @@ title: Blog
 
 
 <div class="jumbotron">
-    <p class="lead"></p>
+    <h1>Blog</h1>
 </div>
 
-
-<h4>Todas las entradas</h4>
 
 <div class="row">
-    {% for post in paginator.posts %}
-    <div class="col-md-12 col-lg-6">
-        <div class="card" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-            <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                <meta itemprop="name" content="Giovanni Cortés">
-                <meta itemprop="url" content="https://giovannicortes.com">
-                <div itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-                    <meta itemprop="url" content="https://giovannicortes.com/assets/img/logo_pc.jpg">
-                    <meta itemprop="height" content="500">
-                    <meta itemprop="width" content="500">
+    <div class="col-md-8 blog-main">
+        <div class="row">
+            {% for post in paginator.posts %}
+            <div class="col-md-12">
+                <div class="card" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+                    <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                        <meta itemprop="name" content="Giovanni Cortés">
+                        <meta itemprop="url" content="https://giovannicortes.com">
+                        <div itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+                            <meta itemprop="url" content="https://giovannicortes.com/assets/img/logo_pc.jpg">
+                            <meta itemprop="height" content="500">
+                            <meta itemprop="width" content="500">
+                        </div>
+                    </div>
+                    <a href="{{ post.url }}">
+                        <img src="{{ post.featured_image }}" alt="{{ post.title }}">
+                    </a>
+                    <div class="content">
+                        <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                        <p>{{ post.excerpt }}</p>
+                    </div>
                 </div>
             </div>
-            <a href="{{ post.url }}">
-                <img src="{{ post.featured_image }}" alt="{{ post.title }}">
-            </a>
-            <div class="content">
-                <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-                <p>{{ post.excerpt }}</p>
-            </div>
+            {% endfor %}
         </div>
-    </div>
-    {% endfor %}
-</div>
 
-<nav aria-label="..." class="paginator">
-    <ul class="pager">
-        {% if paginator.previous_page %}
-        <li class="previous"><a href="{{ paginator.previous_page_path }}" class="previous">&larr; Anterior</a></li>
-        {% endif %}
-        {% if paginator.next_page %}
-        <li class="next"><a href="{{ paginator.next_page_path }}" class="next">&rarr; Siguiente</a></li>
-        {% endif %}
-    </ul>
-</nav>
+        <nav aria-label="..." class="paginator">
+            <ul class="pager">
+                {% if paginator.previous_page %}
+                <li class="previous"><a href="{{ paginator.previous_page_path }}" class="previous">&larr; Anterior</a></li>
+                {% endif %}
+                {% if paginator.next_page %}
+                <li class="next"><a href="{{ paginator.next_page_path }}" class="next">&rarr; Siguiente</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+
+    <aside class="col-md-4 blog-sidebar">
+        {% include sidebar.html %}
+    </aside>
+</div>

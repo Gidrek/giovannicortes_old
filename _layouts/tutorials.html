@@ -1,0 +1,53 @@
+---
+layout: default
+title: {{ this.title }}
+---
+
+<section class="page-container">
+  
+  <h3 class="post-title">
+    {{ page.title }}
+  </h3>
+
+  <hr class="dashed">
+
+  <article>
+    {{ content }}
+  </article>
+
+  <hr class="dashed">
+
+  <div class="row">
+    <div class="col-md-12 post-share">
+      <div class="social">
+
+        Comparte:
+
+        <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ page.url | prepend: site.url }}" rel="nofollow"
+          target="_blank" title="Comparte en Twitter">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?app_id=1844900928896311&u={{ page.url | prepend: site.url }}"
+          rel="nofollow" target="_blank" title="Comparte en Facebook">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="http://www.linkedin.com/shareArticle?mini=true&url={{ page.url | prepend: site.url }}&title={{ page.title }}&source=https://gidrek.com"
+          rel="nofollow" target="_blank" title="Comparte en LinkedIn">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="https://plus.google.com/share?url={{ page.url | prepend: site.url }}" rel="nofollow" target="_blank"
+          title="Comparte en Google+">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="comments">
+    {% if jekyll.environment == 'production' %}
+    {% include disqus_comments.html %}
+    {% endif %}
+  </div>
+
+
+</section>

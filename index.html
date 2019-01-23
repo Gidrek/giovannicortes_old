@@ -1,52 +1,80 @@
 ---
 layout: default
-title: Mis apuntes de programación
 ---
 
 
 <div class="jumbotron">
   <h1>Giovanni <span class="logo">Cortés</span></h1>
-  <p class="lead">Mis apuntes de Programación</p>
+  <p class="lead">{{ site.description }}</p>
 </div>
-
-
-<h4>Últimas entradas</h4>
 
 <div class="row">
-  {% for post in site.posts limit:6 %}
-  <div class="col-md-12 col-lg-6">
-    <div class="card" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-      <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="Giovanni Cortés">
-        <meta itemprop="url" content="https://giovannicortes.com">
-        <div itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-          <meta itemprop="url" content="https://giovannicortes.com/assets/img/logo_pc.jpg">
-          <meta itemprop="height" content="500">
-          <meta itemprop="width" content="500">
+  <div class="col-md-8 blog-main">
+    <h4>Tutoriales</h4>
+
+    <div class="row">
+      <div class="col-md-12 col-lg-6">
+        <div class="tutorial-card">
+          <div class="header">
+            <img src="/assets/img/monogame_logo.png" width="140" height="140" />
+          </div>
+          <div class="content">
+            <h4>Introducción a MonoGame</h4>
+            <p>Aprende a crear videojuegos con este tutorial básico de MonoGame.
+              Aprenderemos conceptos importantes mientras creamos un shooter
+              completo.
+            </p>
+
+            <a href="/introduccion-a-monogame/" class="btn btn-primary btn-tutorial">Ver tutorial</a>
+          </div>
         </div>
       </div>
-      <a href="{{ post.url }}">
-        <img src="{{ post.featured_image }}" alt="{{ post.title }}">
-      </a>
-      <div class="content">
-        <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-        <p>{{ post.excerpt }}</p>
-      </div>
     </div>
-  </div>
-  {% endfor %}
-</div>
 
-<div class="d-flex justify-content-center">
-  <a href="/blog/" class="btn btn-primary">Ver todos</a>
-</div>
 
-<section class="d-flex justify-content-center profile">
-  <div class="avatar" style="background-image: url(/assets/img/avatar.jpg);"></div>
-  <div class="content">
-    <h4>Giovanni Cortés</h4>
-    <p>
-      Soy un programador aspirante a creador de videojuegos indie
-    </p>
+    <h4>Últimas entradas</h4>
+
+    <div class="row">
+      {% for post in site.posts limit:6 %}
+      <div class="col-md-12">
+        <div class="card" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="Giovanni Cortés">
+            <meta itemprop="url" content="https://giovannicortes.com">
+            <div itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+              <meta itemprop="url" content="https://giovannicortes.com/assets/img/logo_pc.jpg">
+              <meta itemprop="height" content="500">
+              <meta itemprop="width" content="500">
+            </div>
+          </div>
+          <a href="{{ post.url }}">
+            <img src="{{ post.featured_image }}" alt="{{ post.title }}">
+          </a>
+          <div class="content">
+            <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+            <p>{{ post.excerpt }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <a href="/blog/" class="btn btn-primary">Ver todos</a>
+    </div>
+
+    <section class="d-flex justify-content-center profile">
+      <div class="avatar" style="background-image: url(/assets/img/avatar.jpg);"></div>
+      <div class="content">
+        <h4>Giovanni Cortés</h4>
+        <p>
+          Soy un programador aspirante a creador de videojuegos indie
+        </p>
+      </div>
+    </section>
   </div>
-</section>
+
+  <aside class="col-md-4 blog-sidebar">
+    {% include sidebar.html %}
+  </aside>
+</div>

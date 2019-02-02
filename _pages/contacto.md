@@ -11,7 +11,7 @@ Si tienes alguna pregunta, comentario o duda puedes contactarme a giovannicortes
 
 También puedes buscarme en [Twitter](https://twitter.com/giovanni_cortes)
 
-El canal oficial de Youtube puedes encontrarlo [aquí](https://www.youtube.com/channel/UC9cvQ5Lm2S9oY5nMmf26wGw)
+El canal oficial de Youtube puedes encontrarlo [aquí](https://www.youtube.com/channel/UCcX7Q7xMAZ3u4QV-Ft44V9A)
 
 <hr>
 

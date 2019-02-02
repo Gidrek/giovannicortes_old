@@ -22,7 +22,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://giovannicortes.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: giovanni_cortes
 github_username:  gidrek
-youtube_channel:
+youtube_channel: UCcX7Q7xMAZ3u4QV-Ft44V9A
 
 paginate: 10
 paginate_path: "/blog/page:num/"

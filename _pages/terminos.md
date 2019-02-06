@@ -242,4 +242,4 @@ servicio implica la aceptación de dichos cambios.
 
 #### SECCIÓN 17 – INFORMACIÓN DE CONTACTO
 
-Preguntas acerca de los Términos de Servicio deben ser enviadas a giovannicortes.dev@gmail.com.
+Preguntas acerca de los Términos de Servicio deben ser enviadas a giovanni@giovannicortes.com.

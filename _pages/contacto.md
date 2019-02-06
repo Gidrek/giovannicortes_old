@@ -7,7 +7,7 @@ permalink: /contacto/
 
 #### Contactándome
 
-Si tienes alguna pregunta, comentario o duda puedes contactarme a giovannicortes.dev@gmail.com
+Si tienes alguna pregunta, comentario o duda puedes contactarme a giovanni@giovannicortes.com
 
 También puedes buscarme en [Twitter](https://twitter.com/giovanni_cortes)
 

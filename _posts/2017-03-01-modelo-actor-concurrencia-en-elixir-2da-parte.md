@@ -1,12 +1,6 @@
----
-layout: post
-title:  "Modelo Actor Concurrencia en Elixir - 2da Parte"
-date:   2017-03-01 08:11:34 -0600
-description: Segunda parte del tutorial de Elixir y su modelo de actor concurrencia.
-categories: elixir
-featured_image: "/assets/img/elixir/elixir_post_02.jpg"
-featured_video:
----
+
+# Modelo Actor Concurrencia en Elixir - 2da Parte
+
 
 [Ya tenemos nuestra aplicación funcionando](/elixir/modelo-actor-concurrencia-en-elixir-1ra-parte/), nos trae la información que queremos
 y también muestra información de error cuando ponemos una ciudad que no exite. Con
@@ -24,7 +18,7 @@ de empezar a empacar la función de `WeatherElixir.Worker.temperature_of` en un 
 Primero vamos a agregar una función loop a nuestro worker que se encargará de
 crear los procesos para cada ciudad
 
-{% highlight elixir %}
+```elixir
 defmodule WeatherElixir.Worker do
 
   def loop do
@@ -38,16 +32,16 @@ defmodule WeatherElixir.Worker do
   end
 
   ...
-{% endhighlight %}
+```
 
 
 Vamos a explicar un poco los procesos para ir entendiendo que vamos haciendo.
 Corre de nuevo `iex -S mix` para que probemos la nueva función.
 
-{% highlight bash %}
+```bash
 iex(1)> pid = spawn(WeatherElixir.Worker, :loop, [])
 #PID<0.190.0>
-{% endhighlight %}
+```
 
 Usamos una función que viene integrada en Elixir llamada `spawn`, esta función
 es especial ya que nos crea los procesos. Cuando creamos un proceso esta función 
@@ -62,7 +56,7 @@ podemos interactuar. Una función puede recibir mensaje de otros procesos, siemp
 y cuando estén dentro de un bloque `receive`. Vamos a darle un vistazo a nuestra
 función loop
 
-{% highlight elixir %}
+```elixir
   def loop do
     receive do
       { sender_pid, location} ->
@@ -72,7 +66,7 @@ función loop
     end
     loop()
   end
-{% endhighlight %}
+```
 
 Tenemos nuestro bloque `receive` en donde nos encontramos con una estructura
 similar a un `case`, esto quiere decir que va a recibir una serie de parámetros
@@ -99,22 +93,22 @@ llama `send/2`. El primer argumento es el pid del proceso al cual le mandaremos
 mensaje, por eso es importante guardar ese pid, el segundo argumento es el mensaje
 en si que andamos mandando.
 
-{% highlight elixir %}
+```elixir
     receive do
       { sender_pid, location} ->
         # Mandando un mensaje con sender
         send(sender_pid, {:ok, temperature_of(location)})
     end
-{% endhighlight %}
+```
 
 En nuestra función de loop estamos mandando un mensaje con la función sender, el
 cual usa el pid que recibimos y mandar a llamar la función `temperature_of`. Ya con
 esto podemos empezar a utlizar nuestras funciones. Vamos al `iex`
 
-{% highlight bash %}
+```bash
 iex(2)> send(pid, {self(), "Mexico City"})
 {#PID<0.183.0>, "Mexico City"}
-{% endhighlight %}
+```
 
 ¿Te acuerdas que habiamos creado un proceso de nuestra función loop? Mandamos
 un mensaje a ese proceso, esa función espera la siguiente estructura `{ sender_pid, location}`,
@@ -128,15 +122,15 @@ Como te había dicho anteriormente, todos los procesos tienen un mailbox donde s
 los mensajes, y no son llamados hasta que se haga uso de ellos o los forcemos, para forzar
 a que salgan del mailbox podemos usar la función `flush/0`
 
-{% highlight elixir %}
+```elixir
 iex(8)> flush()
 {:ok, "Mexico City: 12.1°C"}
 :ok
-{% endhighlight %}
+```
 
 Es tiempo de crear la lista de ciudades
 
-{% highlight bash %}
+```bash
 iex(1)> cities = ["Mexico City", "Bogota", "Monaco", "Lima"]
 ["Mexico City", "Bogota", "Monaco", "Lima"]
 iex(2)> cities |> Enum.each(fn city ->
@@ -150,7 +144,7 @@ iex(3)> flush()
 {:ok, "Bogota: 14.0°C"}
 {:ok, "Lima: 23.1°C"}
 :ok
-{% endhighlight %}
+```
 
 ¡Perfecto! Ya hemos creado procesos para obtener la temperatura. Si te das cuenta, los
 resultados no están en el mismo orden en que se mandaron, esto es porque no todos los procesos
@@ -158,7 +152,7 @@ terminan en el mismo orden y lo vamos recibiendo conforme se completen.
 
 Veamos nuestra función loop un poco más
 
-{% highlight elixir %}
+```elixir
   def loop do
     receive do
       { sender_pid, location} ->
@@ -168,8 +162,7 @@ Veamos nuestra función loop un poco más
     end
     loop() ## <- ¡Es recursivo! 
   end
-{% endhighlight %}
-
+```
 Nuestra función es recursiva. Esto es muy importante si queremos que este proceso esté
 recibiendo más de un mensaje, porque cuando un proceso en Elixir recibe un mensaje
 y lo procesa este proceso termina y ya no podremos tener acceso a el. Por lo cual llamamos

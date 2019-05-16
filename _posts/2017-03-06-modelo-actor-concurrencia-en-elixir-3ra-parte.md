@@ -19,7 +19,7 @@ otras palabras, este actor va a guardar el estado.
 
 Para entenderle mejor, crearemos un archivo en `lib/coordinator.ex`
 
-{% highlight elixir %}
+```elixir
 defmodule WeatherElixir.Coordinator do
   def loop(results \\ [], results_expected) do
     receive do
@@ -36,7 +36,7 @@ defmodule WeatherElixir.Coordinator do
     end
   end
 end
-{% endhighlight %}
+```
 
 Primeramente, en nuestro coordinador agregamos un loop que va a estar 
 escuchando y va a poder recibir como mensaje una tupla con un atom y los
@@ -50,7 +50,7 @@ nuevo.
 Vamos a ver más de cerca nuestro loop que recibe la tupla, ya que es lo que 
 hace que nuestro coordinador vaya recibiendo los resultados.
 
-{% highlight elixir %}
+```elixir
 defmodule WeatherElixir.Coordinator do
   def loop(results \\ [], results_expected) do
     receive do
@@ -73,7 +73,7 @@ defmodule WeatherElixir.Coordinator do
         loop(new_results, results_expected)
   end
 end
-{% endhighlight %}
+```
 
 Este segmento de código lo que hace es estar recibiendo los resultados del
 worker y agregarlo a la lista, cuando no hay más resultados entonces se sale.
@@ -81,7 +81,7 @@ worker y agregarlo a la lista, cuando no hay más resultados entonces se sale.
 Listo, ahora solo nos falta usar a neustro coordinador junto al worker.
 Escribamos esto en nuestro archivo `lib/elixir_weather.ex`.
 
-{% highlight elixir %}
+```elixir
 defmodule WeatherElixir do
   
   def temperatures_of(cities) do
@@ -102,7 +102,7 @@ defmodule WeatherElixir do
     end)
   end
 end
-{% endhighlight %}
+```
 
 Es un código no tan complicado, creamos el proceso del coordinador que va
 a estar escuchando cada vez que un proceso de un worker le mande un mensaje.
@@ -111,7 +111,7 @@ Cuando hacemos esto `send(worker_pid, {coordinator_pid, city})`, mandamos un
 mensaje al worker, pero  con el pid del coordinador, si recuerdas, este es 
 el mensaje que esta esuchando el worker
 
-{% highlight elixir %}
+```elixir
   def loop do
     receive do
       { sender_pid, location} ->
@@ -119,18 +119,18 @@ el mensaje que esta esuchando el worker
         # la ciudad
         send(sender_pid, {:ok, temperature_of(location)})
 ...
-{% endhighlight %}
+```
 
 Ahora es tiempo de usar nuestro programa, `iex -S mix`
 
-{% highlight shell %}
+```shell
 iex(1)> cities = ["Mexico City", "Guadalajara", "Caracas", "Cali", "London", "New York", "Tokio", "Madrid"]
 ["Mexico City", "Guadalajara", "Caracas", "Guadalajara", "Cali", "London",
  "New York", "Tokio", "Madrid"]
 iex(2)> WeatherElixir.temperatures_of(cities)
 :ok
 Cali: 25.0°C, Caracas: 22.4°C, Guadalajara: 13.0°C, London: 9.5°C, Madrid: 18.0°C, Mexico City: 13.9°C, New York: -1.2°C, Tokio: 2.5°C
-{% endhighlight %}
+```
 
 
 Como vez, obtuvimos los resultados esperados, de una forma más rápida

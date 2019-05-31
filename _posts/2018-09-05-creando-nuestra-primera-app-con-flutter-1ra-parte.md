@@ -102,7 +102,7 @@ Tendremos un botón que, cada vez que presionemos, agregará una imagen a una li
 
 Para aprender bien todos estos conceptos, lo primero que vamos a hacer es borrar todo lo que tiene el archivo main.dart y sustituyámoslos por lo siguiente:
 
-{% highlight dart %}
+```dart
 // Biblioteca que nos ayuda a crear contenido en la pantalla
 import 'package:flutter/material.dart';
  
@@ -116,7 +116,7 @@ void main() {
   // Toma el Widget y lo muestra en el dispositivo
   runApp(app);
 }
-{% endhighlight %}
+```
 
 Lo primero que vemos es que estamos importando una biblioteca de flutter llamada `material.dart` que nos proporciona un diseño basado en [Material](https://material.io/design/) y que se adapta a las características de iOS y 
 Android (por ejemplo, en iOS la barra de título está centrada mientras que en Android se encuentra a la derecha), también nos proporciona algunas funciones básicas para construir nuestra app. En 
@@ -146,7 +146,7 @@ El Scaffold es un contenedor que implementa la estructura visual de una app hech
 
 Si vemos nuestro mockup, necesitaremos de una barra superior que contenga el título de nuestra aplicación y un botón que nos servirá para agregar imágenes, y gracias al Scaffold será muy fácil crearlos. Vamos a sustituir la parte de Material App
 
-{% highlight dart %}
+```dart
 var app = MaterialApp(
     home: Text("Hola, ¡Bienvenido a Flutter!"),
  );
@@ -174,7 +174,7 @@ var app = MaterialApp(
       ),
     )
   );
-{% endhighlight %}
+```
 
 Corremos nuestra app (Hot Reload) y veremos lo siguiente
 
@@ -183,16 +183,15 @@ Corremos nuestra app (Hot Reload) y veremos lo siguiente
 ¡Vaya! Ya va tomando forma nuestra app. Con poco código creamos la estructura principal de la aplicación. Aunque el código no es mucho, si tiene varias cosas que hay que apuntar. Como ya habíamos 
 hablados, el **Scaffold** nos permite tener una estructura predefinida para usar y agregar otros widgets.
 
-{% highlight dart %}
+```dart
 appBar: AppBar(
   // Un título para la appBar
   title: Text("Let's see images!"),
 ),
-{% endhighlight %}
+```
 
 El Scaffold nos permite agregar una barra superior en el cual podemos poner otros Widgets, en este caso, como título ponemos un widget de texto.
-
-{% highlight dart %}
+```dart
 floatingActionButton: FloatingActionButton(
   // Como hijo del botón, agregamos un ícono (+)
   child: Icon(Icons.add),
@@ -201,7 +200,7 @@ floatingActionButton: FloatingActionButton(
       print("Presionando el botón");
     },
 ),
-{% endhighlight %}
+```
 
 Al igual que Scaffold nos permite agregar una barra superior fácilmente, también tiene la opción de tener un botón flotante, este botón acepta como Widget un **FloatingActionButton**, que permite 
 tener un hijo, en el cual nosotros pusimos un ícono (también un Widget) y un evento **onPressed:** que acepta una función anónima en donde podemos poner acciones que se ejecutarán cuando se presiona 

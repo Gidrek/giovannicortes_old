@@ -22,14 +22,14 @@ Primero vamos a crear un proyecto Phoenix, como nuestra aplicación será solame
 
 Escribe Y y dale enter para que instale las dependencias
 
-{% highlight bash %}
+```
 ...
 * creating hello_guardian/web/templates/page/index.html.eex
 * creating hello_guardian/web/views/layout_view.ex
 * creating hello_guardian/web/views/page_view.ex
 
 Fetch and install dependencies? [Yn]
-{% endhighlight %}
+```
 
 Una vez hecho esto, ya tendremos nuestra aplicación de Phoenix.
 
@@ -37,7 +37,7 @@ Una vez hecho esto, ya tendremos nuestra aplicación de Phoenix.
 
 Lo primero que haremos será configurar nuestra base de datos y crear el modelo de usuario para hacer las pruebas
 
-{% highlight elixir %}
+```elixir
 
 # Configure your database
 
@@ -48,12 +48,12 @@ password: "postgres",
 database: "hello_guardian_dev",
 hostname: "localhost",
 pool_size: 10
-{% endhighlight %}
+```
 
 Ya que lo hayas configurado, crearemos un modelo de usuario sencillo, que nos servirá para poner en práctica el login con tokens.
 En la carpeta <code>web/models/</code> crea el archivo <code>user.ex</code>.
 
-{% highlight elixir %}
+```elixir
 defmodule HelloGuardian.User do
   use HelloGuardian.Web, :model
 
@@ -74,7 +74,7 @@ defmodule HelloGuardian.User do
     |> unique_constraint(:email)
   end
 end
-{% endhighlight %}
+```
 
 Un modelo simple, hemos creado el schema "user" que será el nombre de nuestra tabla en la base de datos. el campo <code>password_conf</code>
 es virtual ya que necesitamos que podamos hacer una validación de la contraseña pero no queremos guardar este dato en la base de datos, por
@@ -83,13 +83,13 @@ datos, esto servirá para que sea usado como nombre de usuario.
 
 Es tiempo de crear la migración para crear la tabla en la base de datos.
 
-{% highlight bash %}
+```
 mix ecto.gen.migration create_user
-{% endhighlight %}
+```
 
 Abre el archivo que generó la migración para crear nuestra tabla y escribe lo siguente
 
-{% highlight elixir %}
+```elixir
 defmodule HelloGuardian.Repo.Migrations.CreateUser do
   use Ecto.Migration
 
@@ -104,21 +104,21 @@ defmodule HelloGuardian.Repo.Migrations.CreateUser do
     create unique_index(:users, [:email])
   end
 end
-{% endhighlight %}
+```
 
 Ahora vamos a crear un usuario de prueba en nuestra base de datos, en el archivo `priv/repo/seeds.exs` crea el siguiente código
 
-{% highlight elixir %}
+```elixir
 HelloGuardian.Repo.insert!(%User{
   name: "Giovanni",
   email: "test@example.com",
   password: "12345678"
 })
-{% endhighlight %}
+```
 
 Ya tenemos nuestras primeras configuraciones listas, vamos a crear la base de datos, a migrarlo y a insertar los datos.
 
-{% highlight bash %}
+```
 $ mix ecto.create
 The database for HelloGuardian.Repo has been created.
 
@@ -132,7 +132,7 @@ $ mix ecto.migrate
 
 13:18:40.241 [info] == Migrated in 0.3s
 
-{% endhighlight %}
+```
 
 Ahora corre <code>mix run priv/repo/seeds.exs</code> en la consola, con esto habremos llenado nuestra base de datos.
 
@@ -145,15 +145,15 @@ Para que nuestra contraseña esté hasheada, vamos a necesitar una biblioteca ll
 
 Agrega la biblioteca a tus dependencias en <code>mix.exs</code>
 
-{% highlight elixir %}
+```elixir
 {:comeonin, "~> 3.0"}
-{% endhighlight %}
+```
 
 Corre `mix do deps.get, compile`
 
 Ahora ya tenemos comeonin instalado, ahora es necesario actualizar nuestro código para que guarde la contraseña hasheada. Borra el registro que creamos, y actualiza el arcivo <code>seeds.exs</code>
 
-{% highlight elixir %}
+```elixir
 alias HelloGuardian.User
   import Comeonin.Bcrypt, only: [hashpwsalt: 1]
 
@@ -163,7 +163,7 @@ alias HelloGuardian.User
     password: hashpwsalt("12345678"),
     password_conf: "12345678",
   })
-{% endhighlight %}
+```
 
 Como puedes ver importamos la función hashpwsalt, esto nos sirve para hashear la contraseña. Si corremos ahora este script <code>mix run priv/repo/seeds.exs</code> y vemos el campo de contraseña en
 nuestra base de datos, te podrás dar cuenta que el campo contraseña se encuentra hasheado.
@@ -175,19 +175,19 @@ con el frontend o en alguna aplicación móvil.
 
 Primero agregamos guardian a nuestras dependencias
 
-{% highlight elixir %}
+```elixir
 defp deps do
   [# ...
     {:guardian, "~> 0.10.0"}
   ..
   ]
 end
-{% endhighlight %}
+```
 
 Corre <code>mix deps.get</code> para obterlo. Antes de poder usar Guardian, es necesario hacer unas configuraciones, en el archivo <code>config.exs</code> agrega
 lo siguiente
 
-{% highlight elixir %}
+```elixir
 config :guardian, Guardian,
   allowed_algos: ["HS512"], # optional
   verify_module: Guardian.JWT, # optional
@@ -196,7 +196,7 @@ config :guardian, Guardian,
   verify_issuer: true, # optional
   secret_key: "jkjjsisisi*jsj0(=0",
   serializer: HelloGuardian.GuardianSerializer
-{% endhighlight %}
+```
 
 Con esto, configuramos aspectos básicos para generar nuestro token, usamos un algoritmo HS512, también la duración que permitirá
 estar activo el token, en nuestro caso es 30 días. La secret key debes poner una cadena que sea difícil de adivinar, por ahora
@@ -206,7 +206,7 @@ También necesitamos crear un serializer, que nos ayudará an codificar y decodi
 
 Crea el archivo <code>lib/hello_guardian/guardian_serializer.ex</code>
 
-{% highlight elixir %}
+```elixir
 defmodule HelloGuardian.GuardianSerializer do
   @behaviour Guardian.Serializer
 
@@ -219,7 +219,7 @@ defmodule HelloGuardian.GuardianSerializer do
   def from_token("User: " <> id), do: { :ok, Repo.get(User, id) }
   def from_token(_), do: { :error, "Unknown resource type" }
 end
-{% endhighlight %}
+```
 
 Ya con Guardian configurado, es hora de crear nuestro controlador para general el token.
 
@@ -227,7 +227,7 @@ Ya con Guardian configurado, es hora de crear nuestro controlador para general e
 
 En la carpeta de controllers, crea el archivo `login_controller.ex`
 
-{% highlight elixir %}
+```elixir
 defmodule HelloGuardian.LoginController do
   use HelloGuardian.Web, :controller
   alias HelloGuardian.User
@@ -261,7 +261,7 @@ defmodule HelloGuardian.LoginController do
     end
   end
 end
-{% endhighlight %}
+```
 
 Lo que hicimos aquí es sencillo, creamos el alias hacia nuestro modelo de usuario para poder usarlo en nuestro código,
 igualmente importamos la función <code>checkpw/2</code> que nos ayuda a verificar si el password que enviamos es el mismo
@@ -274,30 +274,30 @@ pasa todas esas validaciones entonces nos valida la credencial.
 
 Una vez que hemos validado la credencial, entonces es hora de obtener el token, la parte importante en esto es
 
-{% highlight elixir %}
+```elixir
 new_conn = Guardian.Plug.api_sign_in(conn, user)
 jwt = Guardian.Plug.current_token(new_conn)
 claims = Guardian.Plug.claims(new_conn)
 
 new_conn
 |> json(%{token: jwt})
-{% endhighlight %}
+```
 
 Al usar la función <code>Guardian.Plug.current_token(new_conn)</code> podemos optener el token que devolvemos en el json.
 
 Y como cada controlador necesita su vista, crea el archivo <code>login_view.ex</code>
 
-{% highlight elixir %}
+```elixir
 defmodule HelloGuardian.LoginView do
   use HelloGuardian.Web, :view
 end
-{% endhighlight %}
+```
 
 <h2>Obteniendo el usuario por email</h2>
 
 Como dije anteriormente, nos hace falta crear la función <code>get_by_email/1</code>, en tu modelo de usuario, crea la función
 
-{% highlight elixir %}
+```elixir
 alias HelloGuardian.User
 
 def get_by_email(email) do
@@ -307,7 +307,7 @@ def get_by_email(email) do
   query
   |> HelloGuardian.Repo.one
 end
-{% endhighlight %}
+```
 
 Simplemente hacemos una consulta en los usuarios con el correo que pasemos, si encuentra uno o más, enviamos el primero, que sería
 el único ya que no debe haber dos o más usuarios con el mismo email.
@@ -317,25 +317,25 @@ el único ya que no debe haber dos o más usuarios con el mismo email.
 Ya casi terminamos, antes de obtener el token, es necesario decirle a nuestro router a qué path debemos ir, pero antes, hay que
 configurar nuestro pipeline de Api, ya que estamos haciendo un API Rest
 
-{% highlight elixir %}
+```elixir
 pipeline :api do
   plug :accepts, ["json"]
   plug Guardian.Plug.VerifyHeader
   plug Guardian.Plug.LoadResource
 end
-{% endhighlight %}
+```
 
 Simplemente verificamos el encabezado y cargamos los recursos de Guardian,
 
 Ahora en nuestro scope de api, vamos a poner el post a nuestra URL de login
 
-{% highlight elixir %}
+```elixir
 scope "/api", HelloGuardian do
   pipe_through :api
 
   post "/login", LoginController, :login
 end
-{% endhighlight %}
+```
 
 Listo, ya tenemos terminado nuestro generador de tokens
 
@@ -350,7 +350,7 @@ Primero corremos la aplicación <code>mix phoenix.server</code>
 Ahora usamos Postman para hacer el request, la URL que usaremos será <code>http://localhost:4000/api/login</code> y en el body
 del request usamos un json con los datos del usuario
 
-{% highlight javascript %}
+```javascript
 {"user":
 {
 "password":"12345678",
@@ -358,7 +358,7 @@ del request usamos un json con los datos del usuario
 }
 
 }
-{% endhighlight %}
+```
 
 <img src="https://res.cloudinary.com/gidrek/image/upload/c_scale,w_836/v1457562189/login_post.png" alt="Post to login" />
 

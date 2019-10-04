@@ -37,9 +37,9 @@ nos genera los ambientes virtuales.
   Los comandos aquí presentados funcionan en OS X y Linux
 </blockquote>
 
-{% highlight bash %}
+```bash
 sudo pip install virtualenv
-{% endhighlight %}
+```
 
 <h2>Creando un ambiente virtual con virtualenv</h2>
 
@@ -48,26 +48,26 @@ carpeta especial en donde se van a instalar todos los paquetes, de esa forma
 tendrás en un solo lugar todo lo necesario para trabajar. Vamos a suponer que 
 quieres empezar un proyecto nuevo
 
-{% highlight bash %}
+```bash
 # Creamos la carpeta de nuestro proyecto y entramos en ella
 $ mkdir my_project
 $ cd my_project
-{% endhighlight %}
+```
 
 Una vez dentro de nuestra carpeta, es hora de crear nuestro ambiente virtual
 
-{% highlight bash %}
+```
 $ virtualenv myproject
-{% endhighlight %}
+```
 
 Esto nos creará una carpeta con la siguiente estructura
 
-{% highlight bash %}
+```
 myproject/
   bin/
   include/
   lib/
-{% endhighlight %}
+```
 
 En <strong>bin/</strong> se encuentran todos los archivos que nos 
 ayudarán a interactuar con los ambientes virtuales, en <strong>include/</strong> se 
@@ -90,16 +90,16 @@ sección</li>
 
 Activar nuestro ambiente virtual es muy fácil
 
-{% highlight bash %}
+```
 source myproject/bin/activate
-{% endhighlight %}
+```
 
 De esta forma tendremos activado nuestro ambiente virtual. Si te fijas 
 en tu terminal, podrás ver en el prompt el nombre del ambiente virtual
 
-{% highlight bash %}
+```
 (myproject)$
-{% endhighlight %}
+```
 
 Una vez hecho esto ya puedes empezar a instalar los paquetes de python
 
@@ -110,14 +110,14 @@ como siempre para instalarlo, pero antes, debemos checar si hay algún paquete i
 para ello usamos pip freeze para mostrar todos los paquetes instalados, si lo hacemos la 
 primera vez, no debería haber ningún paquete instalado.
 
-{% highlight bash %}
+```
 (myproject)$ pip freeze
 (myproject)$ # No debería haber paquetes instalados
-{% endhighlight %}
+```
 
 Ahora instalemos un paquete, en este caso Django
 
-{% highlight bash %}
+```
 (myproject)$ pip install django
 Collecting django
 Downloading Django-1.8-py2.py3-none-any.whl (6.2MB)
@@ -127,15 +127,15 @@ Installing collected packages: django
 Successfully installed django-1.8
 
 (myproject)$
-{% endhighlight %}
+```
 
 Ahora si hacemos un pip freeze nos debería aparecer django instalado
 
-{% highlight bash %}
+```
 (myproject)$ pip freeze
 Django==1.8
 (myproject)$
-{% endhighlight %}
+```
 
 Como puedes ver, tenemos Django 1.8 instalado, al utilizar pip install django , pip nos 
 instala la última versión, podemos instalar una versión diferente al indicarle cúal es 
@@ -148,9 +148,9 @@ gracias a <strong>pip freeze</strong> podemos automatizar un poco la instalació
 paquetes. Lo único que necesitamos es que todos esos paquetes estén en un archivo de 
 texto.
 
-{% highlight bash %}
+```
 (myproject)$ pip freeze > requirements.txt
-{% endhighlight %}
+```
 
 Esto nos creará un archivo llamado <strong>requirements.txt</strong> con todos los 
 paquetes instalados en nuestro ambiente virtual, si tienes bajo control de código esta 
@@ -160,9 +160,9 @@ el archivo podrás instalar los paquetes. Ya que tengas ese archivo, si quieres 
 todos los paquetes debes entrar al ambiente virtual en la otra computadora e instalarlo 
 con pip
 
-{% highlight bash %}
+```
 (myproject)$ pip install -r requirements.txt
-{% endhighlight %}
+```
 
 
 Si le pasamos -r a pip install entonces instalará todos los paquetes del archivo, de esa 
@@ -173,10 +173,10 @@ instalen en la versión que tienes en tu ambiente virtual.
 
 Cuando ya no queremos usar el ambiente virtual, simplemente usamos el siguiente comando
 
-{% highlight bash %}
+```
 (myproject)$ deactivate
 $
-{% endhighlight %}
+```
 
 <h2>Eliminar un ambiente virtual</h2>
 
@@ -187,9 +187,9 @@ virtual, en nuestro caso, con eliminar la carpeta <strong>myproject</strong>
 
 Aunque el uso de <strong>virtualenv</strong> es sencillo, a veces se puede convertir en tedioso, principalmente cuando queremos activarlo. Para hacer más llevadero el uso de ambientes virtuales podemos instalar <strong>virtualenvwrapper</strong> en nuestros paquetes globales. Primero tenemos que instalarlo
 
-{% highlight bash %}
+```
 sudo pip install virtualenvwrapper
-{% endhighlight %}
+```
 
 Ahora necesitamos configurar en dónde se van a guardar todas las carpetas de nuestros 
 ambientes virtuales, esto es muy útil para tener centralizado todo y si algo sale mal, 
@@ -198,36 +198,36 @@ el archivo de configuración de nuestra terminal, yo estoy utilizando zsh por lo
 archivo de configuración será .zshrc y si usas bash entonces será .profile En tu archivo 
 de configuración es necesario que escribas lo siguiente:
 
-{% highlight bash %}
+```
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
-{% endhighlight %}
+```
 
 Una vez que reinicies el shell, ya estarás configurado para trabajar con ambientes 
 virtuales. Para crear un ambiente virtual solamente usamos
 
-{% highlight bash %}
+```
 $ mkvirtualenv myproject
 (myproject)$
-{% endhighlight %}
+```
 
 `workon` también nos sirve para listar todos los ambientes virtuales que tenemos, en caso de que hayamos olvidado el nombre de alguno
 
-{% highlight bash %}
+```
 $ workon
 myproject
 giovannicortes
 tutorial
-{% endhighlight %}
+```
 
 Para eliminar un ambiente virtual solo escribimos rmvirtualenv
 
-{% highlight bash %}
+```
 $ rmvirtualenv myproject
 $ workon
 giovannicortes
 tutorial
-{% endhighlight %}
+```
 
 Una cosa maravillosa de <strong>virtualenvwrapper</strong> es que no necesitamos estar 
 en una carpeta en particular, ya que todo se instala y borra en la carpeta que 

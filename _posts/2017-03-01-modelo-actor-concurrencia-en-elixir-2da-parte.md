@@ -1,6 +1,12 @@
-
-# Modelo Actor Concurrencia en Elixir - 2da Parte
-
+---
+layout: post
+title:  "Modelo Actor Concurrencia en Elixir - 2da Parte"
+date:   2017-03-01 08:13:40 -0600
+description: Segunda parte del tutorial de Elixir y su modelo de actor concurrencia.
+categories: elixir
+featured_image: "/assets/img/elixir/elixir_post_02.jpg"
+featured_video:
+---
 
 [Ya tenemos nuestra aplicación funcionando](/elixir/modelo-actor-concurrencia-en-elixir-1ra-parte/), nos trae la información que queremos
 y también muestra información de error cuando ponemos una ciudad que no exite. Con

@@ -1,6 +1,7 @@
 $title-font-stack: 'Montserrat', sans-serif;
 $body-font-stack: 'Roboto', sans-serif;
 $main-background-color: #f9f9f9;
+$main-text-color: #3a3a3a;
 //$highlight-color: #2482e8;
 $highlight-color: #e85c41;
 $body-font-color: #59594A;
@@ -57,6 +58,25 @@ blockquote {
   font-style: italic;
 }
 
+.spacer {
+  margin-bottom: 20px;
+}
+
+/* ========== HEADER ==========*/
+.site-header {
+  background-color: $highlight-color;
+  color: $main-text-color;
+
+  img {
+      width: 100%;
+  }
+}
+
+.navbar-expand-lg {
+  margin-left: -15px;
+  margin-right: -15px; 
+}
+
 /* Boostrap override */
 .navbar-dark {
   .navbar-brand {
@@ -98,6 +118,11 @@ blockquote {
 
 hr.dashed {
   border-style: dashed;
+}
+
+.index-headline {
+  border: 2px dashed #000000;
+  margin-bottom: 10px;
 }
 
 main {

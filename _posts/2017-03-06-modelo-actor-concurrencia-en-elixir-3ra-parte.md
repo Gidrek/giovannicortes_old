@@ -1,4 +1,12 @@
-# Modelo Actor Concurrencia en Elixir - 3ra Parte
+---
+layout: post
+title:  "Modelo Actor Concurrencia en Elixir - 3ra Parte"
+date:   2017-03-06 08:13:40 -0600
+description: Tercera parte del tutorial de Elixir y su modelo de actor concurrencia.
+categories: elixir
+featured_image: "/assets/img/elixir/elixir_post_03.jpg"
+featured_video:
+---
 
 [En la parte 1](/elixir/modelo-actor-concurrencia-en-elixir-1ra-parte/) 
 creamos nuestro programa del clima. [En la parte 2](/elixir/modelo-actor-concurrencia-en-elixir-2da-parte/) ya hicimos que nuestro

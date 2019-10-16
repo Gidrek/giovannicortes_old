@@ -9,9 +9,9 @@ permalink: /contacto/
 
 Si tienes alguna pregunta, comentario o duda puedes contactarme a giovannicortes.dev@gmail.com
 
-También puedes buscarme en [Twitter](https://twitter.com/giovanni_cortes)
+También puedes buscarme en [Twitter](https://twitter.com/giocortesdev)
 
-El canal oficial de Youtube puedes encontrarlo [aquí](https://www.youtube.com/channel/UCcX7Q7xMAZ3u4QV-Ft44V9A)
+El canal oficial de Youtube puedes encontrarlo [aquí](https://www.youtube.com/c/GiovanniCortesDev)
 
 <hr>
 

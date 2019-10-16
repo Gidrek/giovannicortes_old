@@ -150,11 +150,11 @@ Si vemos nuestro mockup, necesitaremos de una barra superior que contenga el tí
 var app = MaterialApp(
     home: Text("Hola, ¡Bienvenido a Flutter!"),
  );
-{% endhighlight %}
+```
 
 Por lo siguiente
 
-{% highlight dart %}
+```dart
 var app = MaterialApp(
     // Creamos el Scaffold 
     home: Scaffold(

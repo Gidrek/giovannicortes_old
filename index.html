@@ -2,62 +2,16 @@
 layout: default
 ---
 
-<div class="col-md-12 spacer"></div>
+<h2>¡Hola! 👋</h2>
 
-<!-- <div class="jumbotron">
-  <h1>Giovanni <span class="logo">Cortés</span></h1>
-  <p class="lead">{{ site.description }}</p>
-</div> -->
+<p> Mi nombre es Giovanni Cortés y son un desarrollador
+  viviendo en México. En mi blog vas a encontrar entradas sobre programación, electrónica y
+  gamedev.</p>
 
-<div class="col-md-12 index-headline">
-  <p>¡Hola! Mi nombre es Giovanni Cortés y son un desarrollador
-      viviendo en México. En mi blog vas a encontrar entradas sobre programación, electrónica y
-      gamedev
-  </p>
-</div>
+<h2>Artículos</h2>
 
-<section class="page-container">
-  <div class="row">
-    <div class="col-md-12 blog-main">
-      
-      <div class="row">
-        {% for post in site.posts limit:4 %}
-        <div class="col-md-12">
-          <div class="card" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-            <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-              <meta itemprop="name" content="Giovanni Cortés">
-              <meta itemprop="url" content="https://giovannicortes.com">
-              <div itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop="url" content="https://giovannicortes.com/assets/img/logo_pc.jpg">
-                <meta itemprop="height" content="500">
-                <meta itemprop="width" content="500">
-              </div>
-            </div>
-            <a href="{{ post.url }}">
-              <img src="{{ post.featured_image }}" alt="{{ post.title }}">
-            </a>
-            <div class="content">
-              <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-              <p>{{ post.excerpt }}</p>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-  
-      <div class="d-flex justify-content-center">
-        <a href="/blog/" class="btn btn-primary">Ver todos</a>
-      </div>
-  
-      <section class="d-flex justify-content-center profile">
-        <div class="avatar" style="background-image: url(/assets/img/avatar.jpg);"></div>
-        <div class="content">
-          <h4>Giovanni Cortés</h4>
-          <p>
-            Soy un programador aspirante a creador de videojuegos indie
-          </p>
-        </div>
-      </section>
-    </div>
-  </div>
-</section>
+<ul>
+    {% for post in site.posts %}
+    <li><a href="{{ post.url }}" class="text-dark">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>

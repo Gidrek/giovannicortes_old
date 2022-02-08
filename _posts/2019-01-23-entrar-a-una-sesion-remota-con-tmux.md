@@ -14,33 +14,33 @@ Tmux si tienen necesidad de hacerlo algún día.
 
 ### Entrar a una sesión remota
 
-{% highlight bash %}
+```
 ssh <username>@<hostname> -t tmux a
-{% endhighlight %}
+```
 
 ### Salir de una sesión remota
 
-{% highlight bash %}
+```bash
 Ctrl + B, D
-{% endhighlight %}
+```
 
 ### Crear una nueva ventana de Tmux
 
-{% highlight bash %}
+```bash
 Ctrl + B, C
-{% endhighlight %}
+```
 
 ### Renombrar una ventana o ponerle nombre
 
-{% highlight bash %}
+```
 Ctrl + B, ,
-{% endhighlight %}
+```
 
 ### Moverse a una ventana
 
-{% highlight bash %}
+```
 Ctrl + B, [número de la ventana]
-{% endhighlight %}
+```
 
 Con esos comandos básicos ya se puede uno empezar a usar Tmux, próximamente espero poder usarlo más y aprender y 
 porque me está gustando cómo se maneja.

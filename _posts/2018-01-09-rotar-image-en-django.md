@@ -28,7 +28,7 @@ más usada.
 Primero, lo que vamos a hacer es crear una pequeña función que nos ayude a rotar la imagen con ayuda de
 Pillow.
 
-{% highlight python %}
+```python
 from PIL import Image, ExifTags
 
 def rotate_image(filepath):
@@ -50,7 +50,7 @@ def rotate_image(filepath):
   except (AttributeError, KeyError, IndexError):
     # cases: image don't have getexif
     pass
-{% endhighlight %}
+```
 
 > Si quieres saber por qué esos números, aquí más y mejor información sobre la 
   orientación de EXIF [https://www.impulseadventure.com/photo/exif-orientation.html](https://www.impulseadventure.com/photo/exif-orientation.html)
@@ -60,7 +60,7 @@ caso de Django, necesitamos hacer algunas cosas más para aplicarlo cuando se gu
 
 En este ejemplo, vamos a tener un modelo llamado `Profile` que es donde guardaremos nuestra imagen
 
-{% highlight python %}
+```python
 from django.db import models
 from utilities.utils import get_filename, rotate_image
 
@@ -73,7 +73,7 @@ class Profile(models.Model):
         null=True
     )
     ...
-{% endhighlight %}
+```
 
 Una vez que tengamos nuestro modelo necesitamos una forma de usar nuestra función para que
 procese la imagen una vez que se haya guardado la imagen, para así traer el path como se guardó
@@ -84,7 +84,7 @@ tenemos que procesar la imagen una vez que se haya guardado en el sistema de arc
 
 Hay que modificar nuestro archivo de `models.py` para traer las bibliotecas necesarias
 
-{% highlight python %}
+```python
 import os
 
 from django.db import models
@@ -109,7 +109,7 @@ def update_image(sender, instance, **kwargs):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     fullpath = BASE_DIR + instance.image.url
     rotate_image(fullpath)
-{% endhighlight %}
+```
 
 Y ya con este cambio, cuando guardemos una imagen en Django podremos ver la imagen
 correctamente

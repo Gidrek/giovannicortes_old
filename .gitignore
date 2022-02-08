@@ -6,3 +6,4 @@ giovannicortes.*
 .DS_Store
 vendor/
 .bundle/
+.jekyll-cache

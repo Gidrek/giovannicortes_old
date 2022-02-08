@@ -34,7 +34,7 @@ y obtengas tu API Key para usarlo.
 
 Vamos a crear un nuevo proyecto
 
-{% highlight bash %}
+```
 $ mix new weather_elixir
 * creating README.md
 * creating .gitignore
@@ -56,36 +56,37 @@ You can use "mix" to compile it, test it, and more:
 Run "mix help" for more commands.
 
 $ cd weather_elixir
-{% endhighlight %}
+```
 
 Ahora en nuestro proyecto abrimos el archivo `mix.exs` para ingresar algunas
 bibliotecas que vamos a utilizar.
 
-{% highlight elixir %}
+```elixir
 defp deps do
   [
     {:httpoison, "~> 0.9.0"},
     {:json, "~> 0.3.0"}
   ]
 end
-{% endhighlight %}
+```
+
 
 En la versión de Elixir 1.4 en adelante, no es necesario que pongamos esas bibliotecas
 en la parte de `application` ya que elixir toma por default que lo quieres
 agregar, si tu versión de Elixir es menor, entonces tendrás que agregarlo a
 tus applicaciones.
 
-{% highlight elixir %}
+```elixir
 def application do
   [applications: [:httpoison]]
 end
-{% endhighlight %}
+```
 
 Ahora es tiempo de obtener las dependencias
 
-{% highlight bash %}
+```
 $ mix deps.get
-{% endhighlight %}
+```
 
 ## Creando el worker
 
@@ -95,7 +96,7 @@ nuestro código y nos da una base para ir contruyendo lo demás.
 
 Crea un archivo `lib/worker.ex`
 
-{% highlight elixir %}
+```elixir
 defmodule WeatherElixir.Worker do
 
   def temperature_of(location) do
@@ -146,7 +147,7 @@ defmodule WeatherElixir.Worker do
   end
 
 end
-{% endhighlight %}
+```
 
 La parte más importante está comentada. En general, lo que hace el código es
 llamar a la API y obtenemos una respuesta de esa API, que gracias a HTTPoison
@@ -155,34 +156,34 @@ sacamos la información que necesitamos.
 
 Vamos a probar este programa.
 
-{% highlight bash %}
+```
 iex –S mix
-{% endhighlight %}
+```
 
 Y ahora a meter algunas ciudades
 
-{% highlight bash %}
+```
 iex(1)> WeatherElixir.Worker.temperature_of "Mexico City"
 "Mexico City: 11.5°C"
 iex(2)> WeatherElixir.Worker.temperature_of "Bogota"
 "Bogota: 12.0°C"
 iex(3)> WeatherElixir.Worker.temperature_of "Omega Plus 7"
 "Omega Plus 7 not found"
-{% endhighlight %}
+```
 
 Y si creamos una lista de ciudades
 
-{% highlight bash %}
+```
  iex(1)> cities = ["Mexico City", "Bogota", "Monaco", "Lima"]
 ["Mexico City", "Bogota", "Monaco", "Lima"]
 iex(2)> cities |> Enum.map(fn city ->
 ...(2)>   WeatherElixir.Worker.temperature_of city
 ...(2)> end)
 ["Mexico City: 11.5°C", "Bogota: 12.0°C", "Monaco: 12.8°C", "Lima: 21.6°C"]
-{% endhighlight %}
+```
 
 Funciona muy bien, pero hay un problema, el programa no es concurrente, para obtener
 la temperatura de una ciudad espera a que termine la otra ciudad para continuar, y no
 estamos sacando provecho de Elixir. 
 
-En la [segunda parte](/elixir/modelo-actor-concurrencia-en-elixir-2da-parte/) vamos a empezar a ver los procesos de Elixir y ver cómo nos puede ayudar a tener un programa concurrente.
+En la [segunda parte](/modelo-actor-concurrencia-en-elixir-2da-parte/) vamos a empezar a ver los procesos de Elixir y ver cómo nos puede ayudar a tener un programa concurrente.

@@ -15,7 +15,7 @@ es [https://jsonplaceholder.typicode.com/](https://jsonplaceholder.typicode.com/
 
 En sí, la URL que vamos a utilizar es [https://jsonplaceholder.typicode.com/photos](https://jsonplaceholder.typicode.com/photos), que nos trae datos como el siguiente
 
-{% highlight json %}
+```json
 [
   {
     "albumId": 1,
@@ -39,7 +39,7 @@ En sí, la URL que vamos a utilizar es [https://jsonplaceholder.typicode.com/pho
     "thumbnailUrl": "https://via.placeholder.com/150/24f355"
   },
 ]
-{% endhighlight %}
+```
 
 Utilizaremos `url` para tener la imagen fake que tiene la API.
 
@@ -47,7 +47,7 @@ Si usamos la url de photos con el id del album, solo nos traerá la info de ese 
 
 [https://jsonplaceholder.typicode.com/photos/1](https://jsonplaceholder.typicode.com/photos/1)
 
-{% highlight json %}
+```json
 {
   "albumId": 1,
   "id": 1,
@@ -55,7 +55,7 @@ Si usamos la url de photos con el id del album, solo nos traerá la info de ese 
   "url": "https://via.placeholder.com/600/92c952",
   "thumbnailUrl": "https://via.placeholder.com/150/92c952"
 }
-{% endhighlight %}
+```
 
 Con esta herramienta en mano, vamos a empezar a trabajar.
 
@@ -70,32 +70,32 @@ Dentro de la carpeta src vamos a crear otra carpeta llamada `models` y dentro de
 
 Vamos a crear nuestro modelo
 
-{% highlight dart %}
+```dart
 class ImageModel {
   int id;
   String url;
   String title;
 }
-{% endhighlight %}
+```
 
 Aquí creamos una clase llamada `ImageModel` que contiene 3 propiedades: id, url y title. Con esas propiedades vamos a trabajar para crear nuestra interfaz.
 
 Ahora, queremos que cuando creamos un objeto de `ImageModel` ya contenga estas propiedades inicializadas, por lo cual vamos a agregar un constructor para que cuando 
 creamos el objeto de **ImageModel** ya tenga datos asociados a ese objecto. Agreguemos la siguiente línea de código a la clase
 
-{% highlight dart %}
+```dart
 ImageModel(this.id, this.url, this.title);
-{% endhighlight %}
+```
 
 Lo que acabamos de escribir es una forma sencilla de crear un constructor en Dart, podríamos haber escrito
 
-{% highlight dart %}
+```dart
 ImageModel(int id, String url, String title) {
   this.id = id;
   this.url = url;
   this.title = title;
 }
-{% endhighlight %}
+```
 
 Pero esto es tan común que Dart nos permite hacerlo de la manera en que lo hicimos, haciendo el código más fácil de leer y de crear.
 
@@ -106,13 +106,13 @@ JSON.
 
 Vamos a agregar a nuestra clase esta **factory** para crear nuestros objetos a través del json que le pasemos
 
-{% highlight dart %}
+```dart
 ImageModel.fromJson(Map<String, dynamic> parsedJson) {
   id = parsedJson["id"];
   url = parsedJson["url"];
   title = parsedJson["title"];
 }
-{% endhighlight %}
+```
 
 En este caso creamos un método llamado `fromJson` que va a actuar como nuestro **factory**. Como el json que le pasemos sabemos que es un Mapa (una estructura con una 
 cadena como llave y un valor dinámico), le pasamos el `Map<String, dynamic> parsedJson`, ya que sabemos que la llave siempre será una cadena y lo que cambia es el 
@@ -128,20 +128,20 @@ transformamos el JSON y mostramos esos datos en nuestra App.
 
 Vamos a nuestro archivo `app.dart` y en nuestra clase `AppState` agregamos un nuevo método.
 
-{% highlight dart %}
+```dart
 fetchImage()  {
 }
-{% endhighlight %}
+```
 
 Por ahora estará vacío, ya luego lo llenaremos con más código. Ahora, hay que cambiar la parte de `onPressed` ya que cada vez que el usuario presione el botón, 
 llamaremos nuestra función, esto debe quedar así
 
-{% highlight dart %}
+```dart
 floatingActionButton: FloatingActionButton(
    child: Icon(Icons.add),
    onPressed: fetchImage,
 ),
-{% endhighlight %}
+```
 
 Si te das cuenta y si has usado otros lenguajes, en este caso, cuando llamamos al método `fetchImage()` en el `onPressed` lo ponemos sin paréntesis. Esto es porque si 
 le ponemos paréntesis significa que cuando se crea el AppState se va a activar y no queremos esto, si no solamente cuando se presione el botón. Entonces al no 
@@ -152,24 +152,24 @@ obtener los resultados.
 
 Al inicio del archivo hay que hacer tres imports.
 
-{% highlight dart %}
+```dart
 import 'package:http/http.dart' show get;
 import 'dart:convert';
 import 'package:images/src/models/image_model.dart';
-{% endhighlight %}
+```
 
 En este caso, solo usaremos el get de la biblioteca de `http.dart` por lo cual solo mostramos esa función. Usaremos `dart:convert` para hacer un parse del JSON. Y 
 también importamos nuestro modelo.
 
 Hay que modificar  el método `fetchImage` para que quede de la siguiente manera
 
-{% highlight dart %}
+```dart
 fetchImage() async {
   counter++;
   var response = await get('https://jsonplaceholder.typicode.com/photos/$counter');
   var imageModel = ImageModel.fromJson(json.decode(response.body));
 }
-{% endhighlight %}
+```
 
 Si nos damos cuenta, cambiamos nuestro método a que sea asíncrono con  `async`. Cuando queremos obtener un dato de internet no sabemos cuánto va a tardar en obtener 
 la respuesta, porque son muchos factores como la velocidad de conexión, si el servidor responde rápido o no, etc. Por lo cual, para no bloquear nuestra aplicación 
@@ -191,19 +191,19 @@ variable para guardar una lista de imágenes.
 
 Agrega la siguiente variable debajo del counter
 
-{% highlight dart %}
+```dart
 List<ImageModel> images = [];
-{% endhighlight %}
+```
 
 Creamos una variable `images` que va a estar guardando una lista de `ImageModel`.
 
 Ahora en nuestro método **fetchImage** hay que agregar al final
 
-{% highlight dart %}
+```dart
 setState(() {
   images.add(imageModel);
 });
-{% endhighlight %}
+```
 
 Como ya explicamos en la [segunda parte](/creando-nuestra-primera-app-con-flutter-2da-parte/), para modificar el estado de nuestra aplicación necesitamos usar el método `setState` ya que de esa forma el estado se va 
 pasando en cada iteración.
@@ -218,14 +218,14 @@ Vamos a crer una nueva carpeta en **src** llamada **widgets** y dentro de esa ca
 
 En el archivo escribe lo siguiente
 
-{% highlight dart %}
+```dart
 import 'package:flutter/material.dart';
 import 'package:images/src/models/image_model.dart';
  
 class ImageList extends StatelessWidget {
  
 }
-{% endhighlight %}
+```
 
 Hacemos un esqueleto de la lista de imágenes que vamos a utilizar. Volvamos al archivo app.dart para hacer unos cambios y usar nuestra lista de imágenes.
 
@@ -233,13 +233,13 @@ En el archivo hay que agregar un import
 
 Y sustituir el **body** de nuestro **Scafold** con la lista de imágenes
 
-{% highlight dart %}
+```dart
 body: ImageList(images)
-{% endhighlight %}
+```
 
 ¡Pero espera, estamos mandando un parámetro! Sí, este parámetro nos servirá para hacer la lista de imágenes en el widget que creamos anteriormente, por lo que hay que modificar nuestro archivo `image_list.dart` para que quede de la siguiente forma
 
-{% highlight dart %}
+```dart
 import 'package:flutter/material.dart';
 import 'package:images/src/models/image_model.dart';
  
@@ -257,7 +257,7 @@ class ImageList extends StatelessWidget {
     );
   }
 }
-{% endhighlight %}
+```
 
 Dado que un `StatelessWidget` una vez que se crea ya no se puede modificar, sus variables deben ser `final`, en este caso creamos una lista de `ImageModel`. Y creamos el 
 constructor para poder recibir las imágenes.
@@ -298,7 +298,7 @@ Esta vez iremos un poco más rápido y podremos ahondar en estos temas si gustas
 Primero vamos a cambiar el return para que no regrese solamente imágenes, ahora usamos un contenedor que tiene como hijo la imagen y también decoramos con bordes, 
 márgenes  y paddings
 
-{% highlight dart %}
+```dart
 return ListView.builder(
   itemCount: images.length,
   itemBuilder: (context, int index) {
@@ -312,7 +312,7 @@ return ListView.builder(
     );
   }
  );
-{% endhighlight %}
+```
 
 Hasta ahora nos quedaría así
 
@@ -322,7 +322,7 @@ Como ves ya está mejor.
 
 Vamos a mejorar la imagen con un poco de información. Debajo del método build vamos a crear un nuevo widget, esto es para tener mejor organizado nuestro código
 
-{% highlight dart %}
+```dart
 Widget buildImage(ImageModel image) {
   return Container(
     decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
@@ -339,13 +339,13 @@ Widget buildImage(ImageModel image) {
     ),
   );
 }
-{% endhighlight %}
+```
 
 Y sustituir el return del build
 
-{% highlight dart %}
+```dart
 return buildImage(images[index]);
-{% endhighlight %}
+```
 
 Y ya corriendo la app nos mostrará
 

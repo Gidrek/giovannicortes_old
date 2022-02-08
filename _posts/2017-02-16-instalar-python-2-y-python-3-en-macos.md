@@ -33,9 +33,9 @@ Yo estoy utilizando zsh por lo cual mi archivo de configuración será .zshrc y 
 
 En tu archivo de configuración es necesario que escribas lo siguiente:
 
-{% highlight bash %}
+```
 export WORKON_HOME=$HOME/.virtualenvs source /usr/local/bin/virtualenvwrapper.sh
-{% endhighlight %}
+```
 
 De esta forma ya tendremos configurado nuestro virtualenwrapper para
 trabajar con ambientes virtuales.
@@ -48,9 +48,9 @@ tiene un manejador de paquetes, en el caso de Ubuntu es apt por lo
 cual con un simple apt-get install  puedes instalar muchas cosas,
 lo mismo con homebrew. Para usar Homebrew podemos instalarlo de la siguiente forma:
 
-{% highlight bash %}
+```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"sh
-{% endhighlight %}
+```
 
 Al terminar no olvides darle `brew doctor` antes de instalar cualquier cosa.
 
@@ -58,24 +58,24 @@ Al terminar no olvides darle `brew doctor` antes de instalar cualquier cosa.
 
 Ya que tenemos instalado Homebrew es hora de instalar Python 3
 
-{% highlight bash %}
+```
 brew install python3
-{% endhighlight %}
+```
 
 Espera a que termine y una vez hecho esto puedes checar si se instaló 
 bien al ver la versión de Python 3 que tienes
 
-{% highlight bash %}
+```
 python3 -V
-{% endhighlight %}
+```
 
 # Crear un ambiente virtual con Python 3
 
 Ya tenemos todo listo, ahora es tiempo de crear nuestro ambiente virtual con Python 3
 
-{% highlight bash %}
+```
 mkvirtualenv python3Test -p /usr/local/bin/python3
-{% endhighlight %}
+```
 
 **python3Test** es el nombre del ambiente virtual, tu puedes ponerle el 
 nombre que te guste, ahora simplemente puedes trabajar con tu 
@@ -84,15 +84,15 @@ ambiente virtual de Python 3 siempre que quieras con `workon python3Test`
 Una vez que estés dentro de tu ambiente virtual puedes checar la 
 versión de Python para que veas con cual estás trabajando
 
-{% highlight bash %}
+```
 python -V
-{% endhighlight %}
+```
 
 Y te saldrá algo parecido a
 
-{% highlight python %}
+```
 Python 3.6.0
-{% endhighlight %}
+```
 
 Como puedes ver, ya no tuvimos que usar `python3 -V`  para ver la versión 
 ya que por defecto está trabajando con Python 3, ahora simplemente 

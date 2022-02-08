@@ -23,7 +23,7 @@ Vamos a hacer un poco de limpieza y de pasada también aprenderemos unos concept
 
 Ahora, en el archivo `app.dart` vamos a poner lo que teníamos en main pero con algunos cambios. Este archivo debe quedar así
 
-{% highlight dart %}
+```dart
 import 'package:flutter/material.dart';
  
 class App extends StatelessWidget {
@@ -43,11 +43,11 @@ class App extends StatelessWidget {
     );
   }
 }
-{% endhighlight %}
+```
 
 Ahora, hay que sustituir el archivo *main.dart* por lo siguiente
 
-{% highlight dart %}
+```dart
 import 'package:flutter/material.dart';
 import 'package:images/src/app.dart';
  
@@ -55,7 +55,7 @@ void main() {
   var app = App();
   runApp(app);
 }
-{% endhighlight %}
+```
 
 Si corremos nuestra App, debemos ver lo mismo que hemos tenido hasta ahora
 
@@ -67,9 +67,9 @@ Lo primero que notamos es que importamos de nuevo la biblioteca de material para
 
 Luego veremos algo importante
 
-{% highlight dart %}
+```dart
 class App extends StatelessWidget
-{% endhighlight %}
+```
 
 En este caso estamos creando una clase `App` que está extendiendo de `StatelessWidget` . Y aquí empezamos a aprender uno de los conceptos más importantes de Flutter.
 
@@ -84,10 +84,10 @@ En este caso usaremos un Stateless widget por que no mantendremos un estado (por
 
 Todo Stateless widget necesita tener un método build que retorna un widget.
 
-{% highlight dart %}
+```dart
 Widget build(BuildContext context) {
     return MaterialApp(
-{% endhighlight %}
+```
 
 Este método se llama cada vez que el Widget es insertado en la estructura de la app. Este método también recibe un `BuildContext` que contiene información del 
 contexto de la app, por ejemplo en qué nivel jerárquico está o información sobre la interfaz de usuario.
@@ -111,7 +111,7 @@ Esto es lo que vamos a hacer
 
 Ahora, con esos pasos vamos a empezar a modificar nuestro archivo app.dart
 
-{% highlight dart %}
+```dart
 import 'package:flutter/material.dart';
  
 class App extends StatefulWidget {
@@ -142,7 +142,7 @@ class AppState extends State<App> {
     );
   }
 }
-{% endhighlight %}
+```
 
 Como te puedes dar cuenta ahora nuestra app se extiende de `StatefulWidget` y dentro de esa clase creamos el método `createState`. Este método retorna el estado de la 
 App, que es un método `AppState` que extiende de una clase abstracta llamada **State**, dentro de los signos de mayor que y menor que ponemos la App que tiene el método 

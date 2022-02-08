@@ -26,7 +26,7 @@ Imaginemos que tenemos un arreglo de números enteros y a todos los elementos q
 
 Generalmente haríamos una función con un bucle como el siguiente
 
-{% highlight swift %}
+```swift
 // El arreglo que queremos transformar
 let array = [2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -44,7 +44,7 @@ for x in arr {
 
 let squaredArray = squareArray(array) 
 // [4, 9, 16, 25, 36, 49, 64, 81, 100]
-{% endhighlight %}
+```
 
 La función **map** resuelve el problema de transformar los elementos de un arreglo pasándoles 
 una función. Esta función itera sobre cada elemento y a cada elemento les aplica la función 
@@ -54,7 +54,7 @@ el arreglo al cual le aplicamos la función.
 
 El código anterior quedaría así
 
-{% highlight swift %}
+```swift
 // El arreglo que queremos transformar
 let array = [2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -62,7 +62,7 @@ let array = [2, 3, 4, 5, 6, 7, 8, 9, 10]
 // closure
 let squaredArray = array.map( { x in x * x }) 
 // [4, 9, 16, 25, 36, 49, 64, 81, 100]
-{% endhighlight %}
+```
 
 En este caso pasamos la función como un closure `{ x in x * x }`, donde `x` es cada 
 elemento del arreglo pasado como parámetro de la closure, y `x * x` es el cuerpo de 
@@ -76,7 +76,7 @@ filter retorna un arreglo con los elementos filtrados del arreglo original, pud
 
 Supongamos que tenemos un arreglo que representa los nombres de imágenes con diferentes extensiones y queremos obtener solo los jpg.
 
-{% highlight swift %}
+```swift
 // El arreglo que queremos filtrar
 let images = [
   "hello.jpg",
@@ -101,11 +101,11 @@ func getJpgImages(images: [String]) -> [String] {
 
 let jpgImages = getJpgImages(images) 
 // ["hello.jpg", "world.jpg", "cats.jpg"]
-{% endhighlight %}
+```
 
 Ahora usemos la función filter.
 
-{% highlight swift %}
+```swift
 // El arreglo que queremos filtrar
 let images = [
   "hello.jpg",
@@ -118,7 +118,7 @@ let images = [
 
 let jpgImages = images.filter({ image in image.hasSuffix(".jpg") })
 // ["hello.jpg", "world.jpg", "cats.jpg"]
-{% endhighlight %}
+```
 
 Al igual que map, no tuvimos que crear ni un for-in, ni tampoco tuvimos que 
 agregar el elemento que estamos filtrando, solamente pasamos nuestro 
@@ -134,7 +134,7 @@ Al contrario que map y filter, **reduce** nos retorna un solo valor, que es la 
 Prosigamos con el ejemplo de los números, si queremos sumar todos los elementos de un arreglo, 
 haríamos algo como esto
 
-{% highlight swift %}
+```swift
 // El arreglo que queremos reducir
 let array = [2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -150,7 +150,7 @@ func sum(arr: [Int]) -> Int {
 
 let arraySum = sum(array) 
 // 54
-{% endhighlight %}
+```
 
 Cuando usamos reduce, no solamente tenemos que pasar una función, si no también un acumulador, 
 que es el valor inicial de nuestro contador, si es trabajo con enteros generalmente es 0, 
@@ -158,13 +158,13 @@ si son cadenas se pasa una cadena vacía. Depende de lo que quieras hacer.
 
 Ahora el ejemplo con reduce
 
-{% highlight swift %}
+```swift
 // El arreglo que queremos reducir
 let array = [2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 let arraySum = array.reduce(0, combine: { acc, x in x + acc }) 
 // 54
-{% endhighlight %}
+```
 
 En este caso, pasamos como valor inicial `0`, ese valor se pasa como parámetro al closure, 
 al cual le pusimos como nombre `acc`; `x` es cada elemento del arreglo, y 
@@ -180,7 +180,7 @@ Como ves, esta función es un poco más elaborada, pero una vez que le entienda
 
 Ahora que ya sabemos el uso de estas funciones, vamos a crear un pequeño programa donde usaremos las tres al mismo tiempo.
 
-{% highlight swift %}
+```swift
 // Suponiendo que tenemos la siguiente estructura de ciudades
 struct City {
   let name: String
@@ -216,7 +216,7 @@ print(citiesFilter)
 // Paris: 2243000
 // Madrid: 3216000
 // Berlin: 3397000
-{% endhighlight %}
+```
 
 Listo, tenemos nuestro programa funcionando y filtrando las ciudades, sin necesidad de usar bucles, además que gracias al acumulador usado como cadena, podemos imprimir nuestras ciudades en un lindo formato.
 

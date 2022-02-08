@@ -68,7 +68,7 @@ para que puedas encontrar los archivos que necesites de una forma más rápida.
 * Lugar donde se encuentran archivos temporales creados por programas y los usuarios
 * Se eliminan en cada reinicio del sistema
 
-# /usr – Rutinas especiales de Linux
+## /usr – Rutinas especiales de Linux
 
 * Aunque el nombre puede dar a confusión, no tiene nada que ver con archivos de usuarios
 * La jerarquía parece como la de root (/)
@@ -101,7 +101,7 @@ para que puedas encontrar los archivos que necesites de una forma más rápida.
 * Contiene software de terceros
 * Muchos sistemas no utilizan este directorio
 
-#  /mnt – Directorio de carga
+##  /mnt – Directorio de carga
 * Ideado para que los administradores monten otros sistemas de archivos, como USB, otros Discos Duros
 
 ## /media – Dispositivos removibles

@@ -8,8 +8,8 @@ featured_image: "/assets/img/elixir/elixir_post_03.jpg"
 featured_video:
 ---
 
-[En la parte 1](/elixir/modelo-actor-concurrencia-en-elixir-1ra-parte/) 
-creamos nuestro programa del clima. [En la parte 2](/elixir/modelo-actor-concurrencia-en-elixir-2da-parte/) ya hicimos que nuestro
+[En la parte 1](/modelo-actor-concurrencia-en-elixir-1ra-parte/) 
+creamos nuestro programa del clima. [En la parte 2](/modelo-actor-concurrencia-en-elixir-2da-parte/) ya hicimos que nuestro
 programa fuera concurrente. Ahora vamos a modificar nuestro programa
 para que un actor pueda recolectar los datos y poder manipularlos, ya que
 mandarlos a la shell no nos sirve de mucho.
@@ -141,5 +141,5 @@ gracias a nuestro coordinador.
 ¡Felicidades! Has creaeado tu primer programa concurrente en Elixir y has
 usado uno de las características más importantes de Erlang y Elixir.
 
-Si tienes alguna duda puedes escribirlo aquí o mandarme un mensaje en [Twitter](https://twitter.com/giovanni_cortes). El repositorio
+Si tienes alguna duda puedes escribirlo aquí o mandarme un mensaje en [Twitter](https://twitter.com/giovannicodes). El repositorio
 de este proyecto está en [Github](https://github.com/Gidrek/weather_elixir)

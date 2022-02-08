@@ -121,7 +121,7 @@ yourproject/
 
 postactivate debería lucir como este
 
-{% highlight bash %}
+```bash
 #!/bin/bash
 # Es activado cuando el virtualenv es activado
 
@@ -129,24 +129,24 @@ postactivate debería lucir como este
 export SECRET_KEY='%gsj1llKksP*//sadH'
 export DB_USERNAME=yournamehere
 export DB_PASSWORD=dbpassword
-{% endhighlight %}
+```
 
 Y el archivo predeactivate debería contener:
 
-{% highlight bash %}
+```bash
 #!/bin/bash
 unset SECRET_KEY
 unset DB_USERNAME
 unset DB_PASSWORD
-{% endhighlight %}
+```
 
 Para que Django pueda acceder a estos valores, debemos sustituir los datos en
 el archivo de settings, por ejemplo:
 
-{% highlight python %}
+```python
 import os
 SECRET_KEY = os.environ.get('SECRET_KEY')
-{% endhighlight %}
+```
 
 # 4. Instalación
 
@@ -200,93 +200,93 @@ Recuerda que estos comandos se harán en la terminal de tu servidor Linux.
 
 ### 4.4.1. pip
 
-{% highlight bash %}
+```bash
 sudo apt-get install python-setuptools
 sudo easy_install pip
-{% endhighlight %}
+```
 
 ### 4.4.2. PostgreSQL
 
-{% highlight bash %}
+```bash
 sudo apt-get install libpq-dev python3-dev
 sudo apt-get install postgresql postgresql-contrib
-{% endhighlight %}
+```
 
 ### 4.4.3. Nginx
 
-{% highlight bash %}
+```bash
 sudo apt-get install nginx
-{% endhighlight %}
+```
 
 
 ### 4.4.4 git
 
-{% highlight bash %}
+```bash
 sudo apt-get install git
-{% endhighlight %}
+```
 
 ### 4.4.5 virtualenv
 
-{% highlight bash %}
+```
 sudo pip install virtualenv
-{% endhighlight %}
+```
 
 ### 4.4.6. virtualenvwrapper
 
-{% highlight bash %}
+```
 sudo pip install virtualenvwrapper
-{% endhighlight %}
+```
 
 Luego de haberlo instalado, configura tu archivo `.zshrc` o `.bashrc`
 
-{% highlight bash %}
+```
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
-{% endhighlight %}
+```
 
 ### 4.5. Configurar PostgreSQL
 
 Ahora es tiempo de configurar la base de datos. Primero, necesitamos cambiar al usuario postgres
 
-{% highlight bash %}
+```
 sudo su - postgres
-{% endhighlight %}
+```
 
 Hay que crear la base de datos. Recuerda que el nombre de la base de datos es el mismo que el
 que tienes en tus settings.
 
-{% highlight bash %}
+```
 createdb yourproject
-{% endhighlight %}
+```
 
 Creamos un nuevo usuario, éste debe coincidir con los settings de tu base de datos, al crear el usuario te
 pedirá contraseña, que es la que vas a utilizar en tu base de datos.
 
-{% highlight bash %}
+```
 createuser -P yournamehere
-{% endhighlight %}
+```
 
 Vamos a entrar al shell de PostgreSQL y dar los privilegios al usuario
 
-{% highlight bash %}
+```
 psql
 GRANT ALL PRIVILEGES ON DATABASE yourproject TO yournamehere;
 \q
-{% endhighlight %}
+```
 
 Finalmente, regresa a tu usuario normal
 
-{% highlight bash %}
+```
 su - yournamehere
-{% endhighlight %}
+```
 
 ## 4.6. Crear un ambiente virtual
 
 Lo siguiente será crear nuestro ambiente virtual para trabajar con Python 3
 
-{% highlight bash %}
+```
 mkvirtualenv yourvirtualenvname -p /usr/bin/python3
-{% endhighlight %}
+```
 
 Ahora es tiempo de poner las variables de los ambientes virtuales como mencioné arriba.
 
@@ -297,12 +297,12 @@ más fácil nuestros paths.
 
 En tu terminal escribe
 
-{% highlight bash %}
+```
 cd
 mkdir web
 cd web/
 git clone https://github.com/yournamehere/yourprojectrepo.git
-{% endhighlight %}
+```
 
 Reemplazando la url con la tuya.
 
@@ -313,44 +313,44 @@ instalarlos. Asegúrate de estar en el ambiente virtual de tu proyecto
 
 ### 4.8.1. Activa el ambiente virtual
 
-{% highlight bash %}
+```
 workon yourproyect
-{% endhighlight %}
+```
 
 
 ### 4.8.2. Instala los requerimientos
 
-{% highlight bash %}
+```
 cd yourproject
 pip install -r requirements.txt
-{% endhighlight %}
+```
 
 ### 4.8.3. Instalar Gunicorn
 
 Si gunicorn no está en los requerimientos, tenemos que instalarlo
 
-{% highlight bash %}
+```
 pip install gunicorn
-{% endhighlight %}
+```
 
 ### 4.8.4. Migrate
 
 Si ya tienes la configuración de tu base de datos y además has hecho tus pruebas en local, es hora de sincronizarlo con Django.
 
-{% highlight bash %}
+```
 # En el root de tu proyecto
 python manage.py migrate
-{% endhighlight %}
+```
 
 ### 4.8.5. Crear el superusuario de Django
 
 En caso de que lo necesites, crea el superusuario
 
-{% highlight bash %}
+```
 # En el root de tu proyecto
 python manage.py createsuperuser
 python manage.py migrate
-{% endhighlight %}
+```
 
 Sigue las instrucciones que te van apareciendo.
 
@@ -359,10 +359,10 @@ Sigue las instrucciones que te van apareciendo.
 Cuando hacemos un collectstatic, Django copia todos los archivos en la carpeta de
 static que tenemos configurado y los copia al STATIC_ROOT, estos son los archivos estáticos que usará Nginx.
 
-{% highlight bash %}
+```
 # En el root de tu proyecto
 python manage.py collectstatic --settings=yourproject.settings.production
-{% endhighlight %}
+```
 
 Contesta que si, y Django se encargará del resto
 
@@ -370,10 +370,10 @@ Contesta que si, y Django se encargará del resto
 
 Esta sección asume que tenemos configurado Django de la siguente forma
 
-{% highlight python %}
+```python
 STATIC_ROOT = os.path.join(BASE_DIR, 'public', 'static')
 STATIC_URL = '/static/'
-{% endhighlight %}
+```
 
 `STATIC_ROOT` es el directorio en donde se copiaron los archivos estáticos, de acuerdo a
 la configuración será en `/home/yourname/web/yourproject/yourproject/public/static/`
@@ -384,9 +384,9 @@ los otros request a Gunicorn (y Django)
 
 Crea un nuevo archivo de configuración
 
-{% highlight bash %}
+```
 sudo vim /etc/nginx/sites-available/yourproject
-{% endhighlight %}
+```
 
 El nombre del archivo no importa, pero es mejor tener consistencia con el nombre de tu proyecto.
 Dentro del archivo, escribe lo siguiente
@@ -415,22 +415,22 @@ Has las sustituciones si es necesario:
 
 Es hora de activar nuestro sitio, debemos poner un enlace simbólico a la carpeta de sites-enabled
 
-{% highlight bash %}
+```
 cd /etc/nginx/sites-enabled
 sudo ln -s ../sites-available/yourproject
-{% endhighlight %}
+```
 
 Elimina el archivo default que no vamos a necesitar
 
-{% highlight bash %}
+```
 sudo rm default
-{% endhighlight %}
+```
 
 Finalmente, es hora de activar nuestro nuevo sitio
 
-{% highlight bash %}
+```
 sudo service nginx restart
-{% endhighlight %}
+```
 
 ## 4.10. Iniciar Gunicorn
 
@@ -438,10 +438,10 @@ Una vez que tenemos configurado Ngnix, es hora de inciar Gunicorn, nuestro servi
 
 En la terminal, ten activado tu ambiente virtual
 
-{% highlight bash %}
+```
 # Corre este comando en el root de tu proyecto
 gunicorn yourproject.wsgi --bind 127.0.0.1:8000
-{% endhighlight %}
+```
 
 Fíjate que el puerto sea el mismo que configuraste en Ngnix.
 
@@ -451,20 +451,20 @@ prácticamente tienes todo listo. Mata Gunicorn con `CTRL-C` para prepararte par
 Primero, es necesario que hagamos una carpeta donde podamos ver los logs de Gunicorn por si algo sale mal.
 Lo haré en la carpeta web, afuera del directorio del repositorio.
 
-{% highlight bash %}
+```
 cd
 cd web
 mkdir logs
 touch logs/yourproject_gunicorn.log
 cd yourprojectrepo/yourproject
-{% endhighlight %}
+```
 
 
 Ahora es tiempo de iniciar gunicorn como un demonio
 
-{% highlight bash %}
+```
 gunicorn yourproject.wsgi --bind 127.0.0.1:8000 --daemon --log-file ~/dev/logs/yourproject_gunicorn.log --workers=3
-{% endhighlight %}
+```
 
 La documentación de gunicorn recomienda poner los workers en *“in the 2-4 x $(NUM_CORES) range.”*
 
@@ -478,9 +478,9 @@ Algunos consejos útiles para mantener tu servidor corriendo
 
 Reiniciar gunicorn puede ser necesario luego de hacer un pull de tu repositorio. Si quieres pararlo simplemente usa
 
-{% highlight bash %}
+```
 pkill gunicorn
-{% endhighlight %}
+```
 
 Esto matará el proceso llamado gunicorn
 

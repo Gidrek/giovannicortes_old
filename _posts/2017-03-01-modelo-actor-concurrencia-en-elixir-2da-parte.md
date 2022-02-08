@@ -176,6 +176,6 @@ de nuevo a la función de tal manera que se quede escuchando el tiempo que viva 
 programa.
 
 Por ahora hemos creado una función que puede estar recibiendo mensajes y creando procesos, 
-pero hemos estado haciendo de forma manual todo esto, en la [siguiente parte](/elixir/modelo-actor-concurrencia-en-elixir-3ra-parte/) crearemos
+pero hemos estado haciendo de forma manual todo esto, en la [siguiente parte](/modelo-actor-concurrencia-en-elixir-3ra-parte/) crearemos
 un actor nuevo que nos ayude a coordinar todas estas llamadas y también a que podamos hacer
 uso de las ciudades y temperaturas sin estar haciendo flush en nuestro iex.

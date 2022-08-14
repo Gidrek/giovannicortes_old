@@ -5,15 +5,16 @@
     border: none;
   }
 
- .highlight {
-  background: #f7f3f3;
-  @extend %vertical-rhythm;
-  padding-left: 5px;
-  padding-top: 5px;
-  border: 1px dotted #aaa;
-
+  .highlight {
+    background: #ffffff;
+    @extend %vertical-rhythm;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: 1px dotted #aaa;
+    font-family: monospace;
+  
   .highlighter-rouge & {
-    background: #eef;
+    background: #ffffff;
   }
 
   .c     { color: #998; font-style: italic } // Comment

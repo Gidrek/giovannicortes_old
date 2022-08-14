@@ -1,12 +1,11 @@
-$title-font-stack: 'Montserrat', sans-serif;
-$body-font-stack: 'Roboto', sans-serif;
-$main-background-color: #f9f9f9;
+$title-font-stack: monospace;
+$body-font-stack: monospace;
+$main-background-color: #ebe9e9;
 $main-text-color: #3a3a3a;
-//$highlight-color: #2482e8;
 $highlight-color: #e85c41;
-$body-font-color: #59594A;
+$body-font-color: #59594a;
 
-$spacing-unit:  30px !default;
+$spacing-unit: 30px !default;
 
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
@@ -16,6 +15,14 @@ ul, ol, dl, figure,
 }
 
 /* Custom CSS */
+body {
+  background: #dbe1f1;
+  font-family: $body-font-stack;
+  max-width: 960px;
+  margin: 0 auto;
+  
+}
+
 hr.dashed {
   border-style: dashed;
 }
@@ -29,4 +36,6 @@ article {
     max-width: 80%;
     text-align: center;
   }
+
+  font-size: 16px;
 }
